@@ -1,0 +1,2845 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas -->
+<html class="client-js ve-available" lang="en" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Error of Analysis of Newton-Cotes formulas - Wikiversity</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"a42641f8-c6a8-40c3-95da-2c07ae2984fa","wgCSPNonce":false,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Error_of_Analysis_of_Newton-Cotes_formulas","wgTitle":"Error of Analysis of Newton-Cotes formulas","wgCurRevisionId":2240715,"wgRevisionId":2240715,"wgArticleId":139007,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Numerical analysis","Freshly started resources"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Error_of_Analysis_of_Newton-Cotes_formulas","wgRelevantArticleId":139007,"wgIsProbablyEditable":true,
+"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":false},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":8000,"wgNoticeProject":"wikiversity","wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgULSCurrentAutonym":"English","wgEditSubmitButtonLabelPublish":true,"wgCentralAuthMobileDomain":false,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":true,"wgSiteNoticeId":"2.94"};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","skins.vector.styles.legacy":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.wikimediaBadges":"ready","ext.uls.interlanguage":
+"ready","wikibase.client.init":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","ext.math.scripts","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.gadget.ReferenceTooltips","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.centralauth.centralautologin","ext.uls.compactlinks","ext.uls.interface","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});});});</script>
+<link rel="stylesheet" href="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/load.php">
+<script async="" src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/load(1).php"></script>
+<style>
+.mw-editfont-monospace{font-family:monospace,monospace}.mw-editfont-sans-serif{font-family:sans-serif}.mw-editfont-serif{font-family:serif} .mw-editfont-monospace,.mw-editfont-sans-serif,.mw-editfont-serif{  font-size:13px;  -moz-tab-size:4; tab-size:4; }.mw-editfont-monospace.oo-ui-textInputWidget,.mw-editfont-sans-serif.oo-ui-textInputWidget,.mw-editfont-serif.oo-ui-textInputWidget{font-size:inherit}.mw-editfont-monospace.oo-ui-textInputWidget > .oo-ui-inputWidget-input,.mw-editfont-sans-serif.oo-ui-textInputWidget > .oo-ui-inputWidget-input,.mw-editfont-serif.oo-ui-textInputWidget > .oo-ui-inputWidget-input{  font-size:13px}.mw-editfont-monospace.oo-ui-textInputWidget > input.oo-ui-inputWidget-input,.mw-editfont-sans-serif.oo-ui-textInputWidget > input.oo-ui-inputWidget-input,.mw-editfont-serif.oo-ui-textInputWidget > input.oo-ui-inputWidget-input{min-height:32px}
+.mw-ui-button{background-color:#f8f9fa;color:#202122;display:inline-block;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;border:1px solid #a2a9b1;border-radius:2px;cursor:pointer;vertical-align:middle;font-family:inherit;font-size:1em;font-weight:bold;line-height:1.28571429em;text-align:center;-webkit-appearance:none}.mw-ui-button:not(.mw-ui-icon-element){min-height:32px;min-width:4em;max-width:28.75em;padding:5px 12px}.mw-ui-button:not(:disabled){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:not(:disabled):visited{color:#202122}.mw-ui-button:not(:disabled):hover{background-color:#ffffff;color:#404244;border-color:#a2a9b1}.mw-ui-button:not(:disabled):focus{color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff;outline-width:0}.mw-ui-button:not(:disabled):focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not(:disabled):active,.mw-ui-button:not(:disabled).is-on{background-color:#c8ccd1;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#ffffff;border-color:#c8ccd1;cursor:default}.mw-ui-button.mw-ui-icon-element:not(.mw-ui-icon-with-label-desktop){color:transparent !important}.mw-ui-button.mw-ui-icon-element:not(.mw-ui-icon-with-label-desktop) span{display:block;position:absolute !important; clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}@media all and (max-width:1000px){.mw-ui-button.mw-ui-icon-element.mw-ui-icon-with-label-desktop{color:transparent !important}.mw-ui-button.mw-ui-icon-element span{display:block;position:absolute !important; clip:rect(1px,1px,1px,1px);width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden}}.mw-ui-button.mw-ui-quiet,.mw-ui-button.mw-ui-quiet.mw-ui-progressive,.mw-ui-button.mw-ui-quiet.mw-ui-destructive{background-color:transparent;color:#202122;border-color:transparent;font-weight:bold}.mw-ui-button.mw-ui-quiet:not(.mw-ui-icon-element),.mw-ui-button.mw-ui-quiet.mw-ui-progressive:not(.mw-ui-icon-element),.mw-ui-button.mw-ui-quiet.mw-ui-destructive:not(.mw-ui-icon-element){min-height:32px}input[type='checkbox']:hover + .mw-ui-button.mw-ui-quiet,input[type='checkbox']:hover + .mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type='checkbox']:hover + .mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:hover{background-color:rgba(0,24,73,0.02745098);color:#202122;border-color:transparent}input[type='checkbox']:focus + .mw-ui-button.mw-ui-quiet,input[type='checkbox']:focus + .mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type='checkbox']:focus + .mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:focus,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:focus,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:focus{color:#202122;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}input[type='checkbox']:active + .mw-ui-button.mw-ui-quiet,input[type='checkbox']:active + .mw-ui-button.mw-ui-quiet.mw-ui-progressive,input[type='checkbox']:active + .mw-ui-button.mw-ui-quiet.mw-ui-destructive,.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:active{background-color:rgba(0,36,73,0.08235294);color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled,.mw-ui-button.mw-ui-quiet:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-quiet:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-quiet.mw-ui-destructive:disabled:active{background-color:transparent;color:#72777d;border-color:transparent}.mw-ui-button.mw-ui-progressive:not(:disabled){background-color:#3366cc;color:#fff;border-color:#3366cc}.mw-ui-button.mw-ui-progressive:not(:disabled):hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:not(:disabled):focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:not(:disabled):active,.mw-ui-button.mw-ui-progressive:not(:disabled).is-on{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive.mw-ui-quiet{color:#3366cc;background-color:transparent;border-color:transparent}input[type='checkbox']:hover + .mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover{background-color:rgba(52,123,255,0.2);border-color:transparent;color:#447ff5}input[type='checkbox']:focus + .mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus{color:#3366cc;border-color:#3366cc}input[type='checkbox']:active + .mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active{color:#ffffff;background-color:#2a4b8d;border-color:#2a4b8d}.mw-ui-button.mw-ui-destructive:not(:disabled){background-color:#dd3333;color:#fff;border-color:#dd3333}.mw-ui-button.mw-ui-destructive:not(:disabled):hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:not(:disabled):focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:not(:disabled):active,.mw-ui-button.mw-ui-destructive:not(:disabled).is-on{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#dd3333;background-color:transparent;border-color:transparent}input[type='checkbox']:hover + .mw-ui-button.mw-ui-destructive.mw-ui-quiet,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:rgba(209,29,19,0.2);border-color:transparent;color:#ff4242}input[type='checkbox']:focus + .mw-ui-button.mw-ui-destructive.mw-ui-quiet,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{color:#dd3333;border-color:#dd3333}input[type='checkbox']:active + .mw-ui-button.mw-ui-destructive.mw-ui-quiet,.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active{color:#ffffff;background-color:#b32424;border-color:#b32424}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not(:first-child){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.cite-accessibility-label{ top:-99999px;clip:rect(1px,1px,1px,1px); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}:target .mw-cite-targeted-backlink{font-weight:bold}.mw-cite-up-arrow-backlink{display:none}:target .mw-cite-up-arrow-backlink{display:inline}:target .mw-cite-up-arrow{display:none}
+.ve-init-mw-progressBarWidget{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-progressBarWidget-bar{height:1em;width:0} .ve-init-mw-progressBarWidget{background-color:#fff;box-sizing:border-box;height:0.875em;border:1px solid #36c;border-radius:0.875em;box-shadow:0 1px 1px rgba(0,0,0,0.15)}.ve-init-mw-progressBarWidget-bar{background-color:#36c;height:0.875em}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:12px;margin:0;z-index:5;padding:0}.referencetooltip > li{background:#fff;border:1px solid #bbb;-webkit-box-shadow:0 0 10px rgba(0,0,0,0.2);-moz-box-shadow:0 0 10px rgba(0,0,0,0.2);box-shadow:0 0 10px rgba(0,0,0,0.2);margin:0;padding:8px 10px;line-height:18px;max-width:300px}.referencetooltip > li + li{box-sizing:border-box;margin-left:7px;margin-top:-1px;border:0;padding:0;height:3px;width:0;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #bbb solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip > li + li::after{z-index:111;content:'';border:6px solid transparent;border-bottom:0;border-top:8px solid #fff;height:0;width:0;display:block;margin-left:-6px;margin-top:-12px}.RTflipped{padding-top:13px}.referencetooltip.RTflipped > li + li{position:absolute;top:0;border-top:0;border-bottom:12px #bbb solid}.referencetooltip.RTflipped > li + li::after{border-top:0;border-bottom:8px #fff solid;position:absolute;margin-top:7px}.RTsettings{ background-image:linear-gradient(transparent,transparent),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F%3E%0D%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%0D%0A%20%20%20%20%3Cpath%20fill%3D%22%23555%22%20d%3D%22M20%2014.5v-2.9l-1.8-.3c-.1-.4-.3-.8-.6-1.4l1.1-1.5-2.1-2.1-1.5%201.1c-.5-.3-1-.5-1.4-.6L13.5%205h-2.9l-.3%201.8c-.5.1-.9.3-1.4.6L7.4%206.3%205.3%208.4l1%201.5c-.3.5-.4.9-.6%201.4l-1.7.2v2.9l1.8.3c.1.5.3.9.6%201.4l-1%201.5%202.1%202.1%201.5-1c.4.2.9.4%201.4.6l.3%201.8h3l.3-1.8c.5-.1.9-.3%201.4-.6l1.5%201.1%202.1-2.1-1.1-1.5c.3-.5.5-1%20.6-1.4l1.5-.3zM12%2016c-1.7%200-3-1.3-3-3s1.3-3%203-3%203%201.3%203%203-1.3%203-3%203z%22%2F%3E%0D%0A%3C%2Fsvg%3E);  display:block;float:right;cursor:pointer;margin:0;margin-top:-4px;height:24px;width:24px;border-radius:2px;box-sizing:border-box;background-position:center center;background-repeat:no-repeat;background-size:24px 24px;margin-left:8px}.RTsettings:hover{background-color:#eee}.RTTarget{background-color:#def}
+@media screen {
+	.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none;font-size:94%}}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.uls-menu{border-radius:2px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:2px;border-top-left-radius:2px}.uls-language-list{border-bottom-right-radius:2px;border-bottom-left-radius:2px}.uls-menu.callout:before,.uls-menu.callout:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.uls-menu.callout.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.uls-menu.callout.selector-right:after{ border-left:10px solid #fff; right:-10px}.uls-menu.callout.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.uls-menu.callout.selector-left:after{ border-right:10px solid #fff; left:-10px}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?01868) no-repeat scroll center center;background-size:28px;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c8ccd1;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}.uls-menu .uls-no-results-view .uls-no-found-more{background-color:#fff}.uls-menu .uls-no-results-view h3{padding:0 28px;margin:0;color:#54595d;font-size:1em;font-weight:normal}   .skin-vector .uls-menu{border-color:#c8ccd1;box-shadow:0 2px 2px 0 rgba(0,0,0,0.25);font-size:0.875em;z-index:3}.skin-vector .uls-search{border-bottom-color:#c8ccd1}.skin-vector .uls-search-label{opacity:0.51;-webkit-transition:opacity 250ms;transition:opacity 250ms}.skin-vector .uls-search-wrapper:hover .uls-search-label{opacity:0.87}.skin-vector .uls-filtersuggestion{color:#72777d}.skin-vector .uls-lcd-region-title{color:#54595d}
+#uls-settings-block{background-color:#f8f9fa;border-top:1px solid #c8ccd1;padding-left:10px;line-height:1.2em;border-radius:0 0 2px 2px}#uls-settings-block > button{background:left top transparent no-repeat;background-size:20px auto;color:#54595d;display:inline-block;margin:8px 15px;border:0;padding:0 0 0 26px;font-size:medium;cursor:pointer}#uls-settings-block > button:hover{color:#202122}#uls-settings-block > button.display-settings-block{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/display.svg?b78f7)}#uls-settings-block > button.input-settings-block{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/input.svg?e7c85)}.uls-tipsy.uls-tipsy{z-index:1000}</style><style>
+.ve-init-mw-tempWikitextEditorWidget{border:0;padding:0;color:inherit;line-height:1.5em;width:100%;-moz-tab-size:4;tab-size:4; }.ve-init-mw-tempWikitextEditorWidget:focus{outline:0;padding:0}.ve-init-mw-tempWikitextEditorWidget::selection{background:rgba(109,169,247,0.5); }
+#p-lang .body ul .uls-trigger,#p-lang .pBody ul .uls-trigger{background-image:none;padding:0}#p-lang .mw-interlanguage-selector,#p-lang .mw-interlanguage-selector:active{background-image:url(/w/extensions/UniversalLanguageSelector/resources/images/language-base20.svg?b7954);background-position:left 4px center;background-repeat:no-repeat;background-size:16px;margin:4px 0 8px;padding:4px 8px 4px 26px;font-size:13px;font-weight:normal;text-align:left;cursor:pointer}#p-lang .mw-interlanguage-selector.selector-open{background-color:#c8ccd1}  .interlanguage-uls-menu:before,.interlanguage-uls-menu:after{border-top:10px solid transparent;border-bottom:10px solid transparent;display:inline-block; top:17px;position:absolute;content:''}.interlanguage-uls-menu.selector-right:before{ border-left:10px solid #c8ccd1; right:-11px}.interlanguage-uls-menu.selector-right:after{ border-left:10px solid #fff; right:-10px}.interlanguage-uls-menu.selector-left:before{ border-right:10px solid #c8ccd1; left:-11px}.interlanguage-uls-menu.selector-left:after{ border-right:10px solid #fff; left:-10px}</style><style>
+.ve-activated .ve-init-mw-desktopArticleTarget-editableContent #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent,.ve-active .ve-init-mw-tempWikitextEditorWidget{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not(.ve-init-mw-desktopArticleTarget-loading-overlay), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;opacity:0.5}.ve-activated #firstHeading{ -webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text;pointer-events:auto;cursor:text}.ve-activated #firstHeading a{ pointer-events:none}.ve-activated #catlinks{cursor:pointer}.ve-activated #catlinks:hover{ background:#e9f2fd}.ve-activated #catlinks a{opacity:1}.ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;top:1.25em;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{transition:height 250ms ease;height:0; } .oo-ui-element-hidden{display:none !important; } .mw-editsection{ unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection:before{content:'\200B'}.mw-editsection a{white-space:nowrap}.mw-editsection-divider{color:#54595d} .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{border-bottom:1px solid #c8ccd1;box-shadow:0 1px 1px 0 rgba(0,0,0,0.1)}.ve-init-mw-desktopArticleTarget-toolbarPlaceholder-open{height:42px} .ve-init-mw-desktopArticleTarget-toolbar,.ve-init-mw-desktopArticleTarget-toolbarPlaceholder{font-size:0.875em;margin:-1.42857143em -0.57142857em 1.42857143em -0.57142857em}.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbar,.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{ margin:-1.14em -1.14em 1.14em -1.14em; }@media screen and (min-width:982px){.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbar,.skin-vector-legacy .ve-init-mw-desktopArticleTarget-toolbarPlaceholder{ margin:-1.43em -1.71em 1.43em -1.71em}}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/load(2).php">
+<meta name="generator" content="MediaWiki 1.38.0-wmf.12">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-crossorigin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="Error of Analysis of Newton-Cotes formulas - Wikiversity">
+<meta property="og:type" content="website">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="https://en.m.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit">
+<link rel="shortcut icon" href="https://en.wikiversity.org/static/favicon/wikiversity.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikiversity.org/w/opensearch_desc.php" title="Wikiversity (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikiversity.org/w/api.php?action=rsd">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<style>.client-js .mw-dismissable-notice { display: block; }</style><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index.php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(1).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(2).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(3).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(4).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(5).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(6).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(7).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(8).php"></script><script src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/index(9).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Error_of_Analysis_of_Newton-Cotes_formulas rootpage-Error_of_Analysis_of_Newton-Cotes_formulas skin-vector action-view skin-vector-legacy vsc-initialized"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice"><div id="centralNotice"></div><!-- CentralNotice --><div class="mw-dismissable-notice"><div class="mw-dismissable-notice-close" style="visibility: visible;">[<a tabindex="0" role="button">dismiss</a>]</div><div class="mw-dismissable-notice-body"><div id="localNotice" lang="en" dir="ltr"><div class="center" style="">
+<big><a href="https://en.wikiversity.org/wiki/Wikiversity:Why_create_an_account%3F" class="mw-redirect" title="Wikiversity:Why create an account?">Why create a Wikiversity account?</a></big></div></div></div></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca tabindex=\"0\" role=\"button\"\u003Edismiss\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003Cdiv id=\"localNotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cdiv class=\"center\" style=\"\"\u003E\n\u003Cbig\u003E\u003Ca href=\"/wiki/Wikiversity:Why_create_an_account%3F\" class=\"mw-redirect\" title=\"Wikiversity:Why create an account?\"\u003EWhy create a Wikiversity account?\u003C/a\u003E\u003C/big\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+	<div class="mw-indicators">
+	</div>
+	<h1 id="firstHeading" class="firstHeading">Error of Analysis of Newton-Cotes formulas</h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From Wikiversity</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content mw-content-ltr" lang="en" dir="ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none"><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#Error_Analysis_of_Newton-Cotes_formulas"><span class="tocnumber">1</span> <span class="toctext">Error Analysis of Newton-Cotes formulas</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#The_Methods[1]"><span class="tocnumber">1.1</span> <span class="toctext">The Methods<sup>[1]</sup></span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#Error_terms_for_different_rules"><span class="tocnumber">1.2</span> <span class="toctext">Error terms for different rules</span></a>
+<ul>
+<li class="toclevel-3 tocsection-4"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#The_Trapezoid_Rule"><span class="tocnumber">1.2.1</span> <span class="toctext">The Trapezoid Rule</span></a></li>
+<li class="toclevel-3 tocsection-5"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#The_Simpson&#39;s_1/3_Rule"><span class="tocnumber">1.2.2</span> <span class="toctext">The Simpson's 1/3 Rule</span></a></li>
+<li class="toclevel-3 tocsection-6"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#The_Simpson&#39;s_3/8_Rule"><span class="tocnumber">1.2.3</span> <span class="toctext">The Simpson's 3/8 Rule</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-7"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#A_Numerical_Example"><span class="tocnumber">1.3</span> <span class="toctext">A Numerical Example</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#Solution"><span class="tocnumber">1.3.1</span> <span class="toctext">Solution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-9"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#Exercises"><span class="tocnumber">1.4</span> <span class="toctext">Exercises</span></a>
+<ul>
+<li class="toclevel-3 tocsection-10"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#Exercise_1[3]"><span class="tocnumber">1.4.1</span> <span class="toctext">Exercise 1<sup>[3]</sup></span></a></li>
+<li class="toclevel-3 tocsection-11"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#Exercise_2"><span class="tocnumber">1.4.2</span> <span class="toctext">Exercise 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-12"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#References"><span class="tocnumber">1.5</span> <span class="toctext">References</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h1><span class="mw-headline" id="Error_Analysis_of_Newton-Cotes_formulas">Error Analysis of Newton-Cotes formulas</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=1" class="mw-editsection-visualeditor" title="Edit section: Error Analysis of Newton-Cotes formulas">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=1" title="Edit section: Error Analysis of Newton-Cotes formulas">edit source</a><span class="mw-editsection-bracket">]</span></span></h1>
+<p>The <a href="https://en.wikipedia.org/wiki/Newton-Cotes_formulas" class="extiw" title="w:Newton-Cotes formulas">Newton-Cotes formulas</a> are a group of formulas for evaluating numeric integration at equally spaced points. 
+</p>
+<h2><span id="The_Methods.5B1.5D"></span><span class="mw-headline" id="The_Methods[1]">The Methods<sup id="cite_ref-1" class="reference"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#cite_note-1">[1]</a></sup></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=2" class="mw-editsection-visualeditor" title="Edit section: The Methods[1]">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=2" title="Edit section: The Methods[1]">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{i}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{i}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/e87000dd6142b81d041896a30fe58f0c3acb2158" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:2.129ex; height:2.009ex;" alt="{\displaystyle x_{i}}"></span>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle i=0,\ldots ,n}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>i</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>n</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle i=0,\ldots ,n}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/063c205352931a55f96dcc9aef7ada666356d9a7" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:11.636ex; height:2.509ex;" alt="{\displaystyle i=0,\ldots ,n}"></span>, be <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n+1}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n+1}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/2a135e65a42f2d73cccbfc4569523996ca0036f1" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.505ex; width:5.398ex; height:2.343ex;" alt="{\displaystyle n+1}"></span> equally spaced points, and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle f_{i}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f_{i}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/65da883ca3d16b461e46c94777b0d9c4aa010e79" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.939ex; height:2.509ex;" alt="{\displaystyle f_{i}}"></span> be the corresponding values. Let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle h}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/b26be3e694314bc90c3215047e4a2010c6ee184a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.339ex; height:2.176ex;" alt="h"></span> be the space <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle h=x_{i+1}-x_{i}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo>=</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>−<!-- − --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h=x_{i+1}-x_{i}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/2bcbeb15d1bffb9c684d57b6e44ab13758a8e44b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:13.637ex; height:2.509ex;" alt="{\displaystyle h=x_{i+1}-x_{i}}"></span>, and let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle s}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>s</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle s}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/01d131dfd7673938b947072a13a9744fe997e632" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.09ex; height:1.676ex;" alt="s"></span> be the interpolation variable <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle s={\frac {x-x_{0}}{h}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>s</mi>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>x</mi>
+              <mo>−<!-- − --></mo>
+              <msub>
+                <mi>x</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>0</mn>
+                </mrow>
+              </msub>
+            </mrow>
+            <mi>h</mi>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle s={\frac {x-x_{0}}{h}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/7886042403f208b7a180f11c731b72014952e759" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.005ex; width:11.579ex; height:5.176ex;" alt="{\displaystyle s={\frac {x-x_{0}}{h}}}"></span>. Thus to interpolate at x,
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\begin{aligned}x-x_{0}&amp;=sh\,,\\x-x_{1}&amp;=x-(x_{0}+h)=(s-1)h\,,\\\vdots \\x-x_{n}&amp;=(s-n)h\,.\end{aligned}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+            <mtr>
+              <mtd>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mi>s</mi>
+                <mi>h</mi>
+                <mspace width="thinmathspace"></mspace>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>+</mo>
+                <mi>h</mi>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mn>1</mn>
+                <mo stretchy="false">)</mo>
+                <mi>h</mi>
+                <mspace width="thinmathspace"></mspace>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mo>⋮<!-- ⋮ --></mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mi>n</mi>
+                <mo stretchy="false">)</mo>
+                <mi>h</mi>
+                <mspace width="thinmathspace"></mspace>
+                <mo>.</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}x-x_{0}&amp;=sh\,,\\x-x_{1}&amp;=x-(x_{0}+h)=(s-1)h\,,\\\vdots \\x-x_{n}&amp;=(s-n)h\,.\end{aligned}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/234bad420f290604905b1b2b3fae02bcbf4039b1" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -6.005ex; width:35.485ex; height:13.176ex;" alt="{\displaystyle {\begin{aligned}x-x_{0}&amp;=sh\,,\\x-x_{1}&amp;=x-(x_{0}+h)=(s-1)h\,,\\\vdots \\x-x_{n}&amp;=(s-n)h\,.\end{aligned}}}"></span></dd></dl>
+<p>A polynomial <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle P_{n}(x)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>P</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle P_{n}(x)}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/56b845e52aab1ff2164ab7ce026bf467823f32de" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.85ex; height:2.843ex;" alt="{\displaystyle P_{n}(x)}"></span> of degree <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/a601995d55609f2d9f5e233e36fbe9ea26011b3b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.395ex; height:1.676ex;" alt="n"></span> can be derived to pass through these points and approximate the function <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle f(x)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(x)}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/202945cce41ecebb6f643f31d119c514bec7a074" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.418ex; height:2.843ex;" alt="f(x)"></span>. Using <a href="https://en.wikipedia.org/wiki/Divided_differences" class="extiw" title="w:Divided differences">divided differences</a> and <a href="https://en.wikipedia.org/wiki/Newton_polynomial" class="extiw" title="w:Newton polynomial">Newton polynomial</a>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle P_{n}(x)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>P</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle P_{n}(x)}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/56b845e52aab1ff2164ab7ce026bf467823f32de" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.85ex; height:2.843ex;" alt="{\displaystyle P_{n}(x)}"></span> can be obtained as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\begin{aligned}P_{n}(x)&amp;=[f_{0}]+[f_{0},f_{1}](x-x_{0})+\cdots +[f_{0},\ldots ,f_{n}](x-x_{0})(x_{1})\ldots (x-x_{n-1})\\&amp;=[f_{0}]+[f_{0},f_{1}]sh+\cdots +[f_{0},\ldots ,f_{n}]s(s-1)\ldots (s-n+1)h^{n}\,.\end{aligned}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>P</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mo stretchy="false">[</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">]</mo>
+                <mo>+</mo>
+                <mo stretchy="false">[</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">]</mo>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo>+</mo>
+                <mo>⋯<!-- ⋯ --></mo>
+                <mo>+</mo>
+                <mo stretchy="false">[</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <mo>…<!-- … --></mo>
+                <mo>,</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">]</mo>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo>…<!-- … --></mo>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                    <mo>−<!-- − --></mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mo stretchy="false">[</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">]</mo>
+                <mo>+</mo>
+                <mo stretchy="false">[</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">]</mo>
+                <mi>s</mi>
+                <mi>h</mi>
+                <mo>+</mo>
+                <mo>⋯<!-- ⋯ --></mo>
+                <mo>+</mo>
+                <mo stretchy="false">[</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo>,</mo>
+                <mo>…<!-- … --></mo>
+                <mo>,</mo>
+                <msub>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">]</mo>
+                <mi>s</mi>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mn>1</mn>
+                <mo stretchy="false">)</mo>
+                <mo>…<!-- … --></mo>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mi>n</mi>
+                <mo>+</mo>
+                <mn>1</mn>
+                <mo stretchy="false">)</mo>
+                <msup>
+                  <mi>h</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msup>
+                <mspace width="thinmathspace"></mspace>
+                <mo>.</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}P_{n}(x)&amp;=[f_{0}]+[f_{0},f_{1}](x-x_{0})+\cdots +[f_{0},\ldots ,f_{n}](x-x_{0})(x_{1})\ldots (x-x_{n-1})\\&amp;=[f_{0}]+[f_{0},f_{1}]sh+\cdots +[f_{0},\ldots ,f_{n}]s(s-1)\ldots (s-n+1)h^{n}\,.\end{aligned}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/be36153997eca8468a660b9f64af95c78ce85fb7" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:77.214ex; height:6.176ex;" alt="{\displaystyle {\begin{aligned}P_{n}(x)&amp;=[f_{0}]+[f_{0},f_{1}](x-x_{0})+\cdots +[f_{0},\ldots ,f_{n}](x-x_{0})(x_{1})\ldots (x-x_{n-1})\\&amp;=[f_{0}]+[f_{0},f_{1}]sh+\cdots +[f_{0},\ldots ,f_{n}]s(s-1)\ldots (s-n+1)h^{n}\,.\end{aligned}}}"></span></dd></dl>
+<p>From the general form of <a href="https://en.wikipedia.org/wiki/Polynomial_interpolation#Interpolation_error" class="extiw" title="w:Polynomial interpolation">polynomial interpolation error</a>, the error of using <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle P_{n}(x)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>P</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle P_{n}(x)}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/56b845e52aab1ff2164ab7ce026bf467823f32de" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.85ex; height:2.843ex;" alt="{\displaystyle P_{n}(x)}"></span> to interpolate <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle f(x)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(x)}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/202945cce41ecebb6f643f31d119c514bec7a074" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.418ex; height:2.843ex;" alt="f(x)"></span> can be obtained as
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\begin{aligned}E_{\text{interpolate}}(x)&amp;=f(x)-P_{n}(x)\\&amp;={\frac {1}{(n+1)!}}(x-x_{0})(x-x_{1})\cdots (x-x_{n})f^{(n+1)}(\xi )\\&amp;={\frac {1}{(n+1)!}}s(s-1)(s-2)\ldots (s-n)h^{n+1}f^{(n+1)}(\xi )\end{aligned}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+            <mtr>
+              <mtd>
+                <msub>
+                  <mi>E</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mtext>interpolate</mtext>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mi>f</mi>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo stretchy="false">)</mo>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>P</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo>+</mo>
+                      <mn>1</mn>
+                      <mo stretchy="false">)</mo>
+                      <mo>!</mo>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>1</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <mo>⋯<!-- ⋯ --></mo>
+                <mo stretchy="false">(</mo>
+                <mi>x</mi>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <msup>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mo stretchy="false">(</mo>
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </msup>
+                <mo stretchy="false">(</mo>
+                <mi>ξ<!-- ξ --></mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mfrac>
+                    <mn>1</mn>
+                    <mrow>
+                      <mo stretchy="false">(</mo>
+                      <mi>n</mi>
+                      <mo>+</mo>
+                      <mn>1</mn>
+                      <mo stretchy="false">)</mo>
+                      <mo>!</mo>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+                <mi>s</mi>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mn>1</mn>
+                <mo stretchy="false">)</mo>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mn>2</mn>
+                <mo stretchy="false">)</mo>
+                <mo>…<!-- … --></mo>
+                <mo stretchy="false">(</mo>
+                <mi>s</mi>
+                <mo>−<!-- − --></mo>
+                <mi>n</mi>
+                <mo stretchy="false">)</mo>
+                <msup>
+                  <mi>h</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                  </mrow>
+                </msup>
+                <msup>
+                  <mi>f</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mo stretchy="false">(</mo>
+                    <mi>n</mi>
+                    <mo>+</mo>
+                    <mn>1</mn>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </msup>
+                <mo stretchy="false">(</mo>
+                <mi>ξ<!-- ξ --></mi>
+                <mo stretchy="false">)</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}E_{\text{interpolate}}(x)&amp;=f(x)-P_{n}(x)\\&amp;={\frac {1}{(n+1)!}}(x-x_{0})(x-x_{1})\cdots (x-x_{n})f^{(n+1)}(\xi )\\&amp;={\frac {1}{(n+1)!}}s(s-1)(s-2)\ldots (s-n)h^{n+1}f^{(n+1)}(\xi )\end{aligned}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/7c88218f7e061e8242141e6e72aee3ba83a6e778" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -6.872ex; margin-bottom: -0.299ex; width:64.341ex; height:15.509ex;" alt="{\displaystyle {\begin{aligned}E_{\text{interpolate}}(x)&amp;=f(x)-P_{n}(x)\\&amp;={\frac {1}{(n+1)!}}(x-x_{0})(x-x_{1})\cdots (x-x_{n})f^{(n+1)}(\xi )\\&amp;={\frac {1}{(n+1)!}}s(s-1)(s-2)\ldots (s-n)h^{n+1}f^{(n+1)}(\xi )\end{aligned}}}"></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{0}\leqslant \xi \leqslant x_{n}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{0}\leqslant \xi \leqslant x_{n}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/13d3f902b5bad05a8db6b89f91d7b38a36d4baa7" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:12.159ex; height:2.509ex;" alt="{\displaystyle x_{0}\leqslant \xi \leqslant x_{n}}"></span>.
+</p><p>Since <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle dx=d(x_{0}+sh)=hds}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>d</mi>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mi>d</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>+</mo>
+        <mi>s</mi>
+        <mi>h</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>h</mi>
+        <mi>d</mi>
+        <mi>s</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle dx=d(x_{0}+sh)=hds}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/5726853359d8f5a7176e8fd4fde6a250f9d3073c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:23.067ex; height:2.843ex;" alt="{\displaystyle dx=d(x_{0}+sh)=hds}"></span>, the error term of numerical integration is
+</p>
+<dl><dd>
+<table style="border-collapse:collapse; background:none; margin:0; border:none;">
+<tbody><tr>
+<td style="vertical-align:middle; border:none; padding:0.08em;" class="nowrap"><div style="margin:0;"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=\int \limits _{x_{0}}^{x_{n}}E_{\text{interpolate}}(x)dx={\frac {h^{n+2}}{(n+1)!}}f^{(n+1)}(\xi )\int \limits _{0}^{n}s(s-1)\cdots (s-n)ds\,.}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <msub>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mn>0</mn>
+              </mrow>
+            </msub>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <msub>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>n</mi>
+              </mrow>
+            </msub>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>interpolate</mtext>
+          </mrow>
+        </msub>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <msup>
+              <mi>h</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>n</mi>
+                <mo>+</mo>
+                <mn>2</mn>
+              </mrow>
+            </msup>
+            <mrow>
+              <mo stretchy="false">(</mo>
+              <mi>n</mi>
+              <mo>+</mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo>!</mo>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </munderover>
+        <mi>s</mi>
+        <mo stretchy="false">(</mo>
+        <mi>s</mi>
+        <mo>−<!-- − --></mo>
+        <mn>1</mn>
+        <mo stretchy="false">)</mo>
+        <mo>⋯<!-- ⋯ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>s</mi>
+        <mo>−<!-- − --></mo>
+        <mi>n</mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>s</mi>
+        <mspace width="thinmathspace"></mspace>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=\int \limits _{x_{0}}^{x_{n}}E_{\text{interpolate}}(x)dx={\frac {h^{n+2}}{(n+1)!}}f^{(n+1)}(\xi )\int \limits _{0}^{n}s(s-1)\cdots (s-n)ds\,.}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/ad6d66e37c7c72bf5916a704816aa6ffee547bd0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -4.171ex; width:75.35ex; height:9.009ex;" alt="{\displaystyle E_{\text{integrate}}=\int \limits _{x_{0}}^{x_{n}}E_{\text{interpolate}}(x)dx={\frac {h^{n+2}}{(n+1)!}}f^{(n+1)}(\xi )\int \limits _{0}^{n}s(s-1)\cdots (s-n)ds\,.}"></span></div>
+</td>
+<td style="vertical-align:middle; width:99%; border:none; padding:0.08em;">
+<div style="margin:0;">
+<table style="border-collapse:collapse; background:none; margin:0; border:none; width:99%;">
+<tbody><tr>
+<td style="border:none; padding:0.08em;" rowspan="2"><p style="margin:0; font-size:4pt;">&nbsp;</p>
+</td>
+<td style="width:100%; border:none; padding:0.08em;"><p style="margin:0; font-size:1pt;">&nbsp;</p>
+</td>
+<td style="border:none; padding:0.08em;" rowspan="2"><p style="margin:0; font-size:4pt;">&nbsp;</p>
+</td></tr>
+<tr>
+<td style="border-left:none; border-top:0px none #e5e5e5; border-right:none; border-bottom:none; padding:0.08em;">
+<p style="margin:0; font-size:1pt;">&nbsp;</p>
+</td></tr></tbody></table>
+</div>
+</td>
+<td style="vertical-align:middle; border:none; padding:0.08em;" class="nowrap"><p style="margin:0pt;"><b>(<cite id="math_1"><span class="reference plainlinksneverexpand" style="font-weight:bold;"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#equation_1">1</a></span></cite>)</b></p>
+</td></tr></tbody></table></dd></dl>
+<h2><span class="mw-headline" id="Error_terms_for_different_rules">Error terms for different rules</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=3" class="mw-editsection-visualeditor" title="Edit section: Error terms for different rules">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=3" title="Edit section: Error terms for different rules">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="The_Trapezoid_Rule">The Trapezoid Rule</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=4" class="mw-editsection-visualeditor" title="Edit section: The Trapezoid Rule">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=4" title="Edit section: The Trapezoid Rule">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Let's consider <a href="https://en.wikipedia.org/wiki/Trapezoid_rule" class="extiw" title="w:Trapezoid rule">the trapezoid rule</a> in a single interval. In each interval, the integration uses two end points. Thus <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n+1=2}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo>=</mo>
+        <mn>2</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n+1=2}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/9e5a41ae3cb687d0836e9cb57c42dbc86d97624e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.505ex; width:9.658ex; height:2.343ex;" alt="{\displaystyle n+1=2}"></span>. Then <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n=1}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n=1}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/d9ec7e1edc2e6d98f5aec2a39ae5f1c99d1e1425" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:5.656ex; height:2.176ex;" alt="{\displaystyle n=1}"></span>.  Applying (<cite id="math_1" style="font-style: normal;"><b><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#math_1">1</a></b></cite>), we get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{1}{\frac {s(s-1)}{2}}h^{2}f&#39;&#39;(\xi )ds=-{\frac {1}{12}}h^{3}f&#39;&#39;(\xi )=O(h^{3})}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi>h</mi>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </munderover>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>s</mi>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mn>2</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mo>″</mo>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>s</mi>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>12</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mo>″</mo>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{1}{\frac {s(s-1)}{2}}h^{2}f''(\xi )ds=-{\frac {1}{12}}h^{3}f''(\xi )=O(h^{3})}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/7eec20ba7fec47354fe4b1fad6ab9de9593564e3" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -4.005ex; width:59.41ex; height:9.176ex;" alt="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{1}{\frac {s(s-1)}{2}}h^{2}f&#39;&#39;(\xi )ds=-{\frac {1}{12}}h^{3}f&#39;&#39;(\xi )=O(h^{3})}"></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{0}\leqslant \xi \leqslant x_{1}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{0}\leqslant \xi \leqslant x_{1}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/80cf48079ee6d6ea4eafbef78a27a84471bb06da" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:11.995ex; height:2.509ex;" alt="{\displaystyle x_{0}\leqslant \xi \leqslant x_{1}}"></span>.
+Thus the local error is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle O(h^{3})}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle O(h^{3})}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/6c4fe479b23ec2e6c381d31acb19a5a537119c85" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.976ex; height:3.176ex;" alt="{\displaystyle O(h^{3})}"></span>. Consider the composite trapezoid rule. Given that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n={\frac {x_{n}-x_{0}}{h}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>x</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi>n</mi>
+                </mrow>
+              </msub>
+              <mo>−<!-- − --></mo>
+              <msub>
+                <mi>x</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>0</mn>
+                </mrow>
+              </msub>
+            </mrow>
+            <mi>h</mi>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n={\frac {x_{n}-x_{0}}{h}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/dd49cc019e71d0000cad103f16a4ed02ff6413b3" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.005ex; width:13.102ex; height:5.176ex;" alt="{\displaystyle n={\frac {x_{n}-x_{0}}{h}}}"></span>, the global error is
+</p>
+<dl><dd>
+<table style="border-collapse:collapse; background:none; margin:0; border:none;">
+<tbody><tr>
+<td style="vertical-align:middle; border:none; padding:0.08em;" class="nowrap"><div style="margin:0;"><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\begin{aligned}\left|\sum _{i=0}^{n-1}-{\frac {1}{12}}h^{3}f&#39;&#39;(\xi _{i})\right|&amp;=n[-{\frac {1}{12}}(x_{n}-x_{0})h^{2}f&#39;&#39;({\bar {\xi }})]\\&amp;=-{\frac {1}{12}}(x_{n}-x_{0})h^{2}f&#39;&#39;({\bar {\xi }})=O(h^{2})\,,\end{aligned}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+            <mtr>
+              <mtd>
+                <mrow>
+                  <mo>|</mo>
+                  <mrow>
+                    <munderover>
+                      <mo>∑<!-- ∑ --></mo>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mi>i</mi>
+                        <mo>=</mo>
+                        <mn>0</mn>
+                      </mrow>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mi>n</mi>
+                        <mo>−<!-- − --></mo>
+                        <mn>1</mn>
+                      </mrow>
+                    </munderover>
+                    <mo>−<!-- − --></mo>
+                    <mrow class="MJX-TeXAtom-ORD">
+                      <mfrac>
+                        <mn>1</mn>
+                        <mn>12</mn>
+                      </mfrac>
+                    </mrow>
+                    <msup>
+                      <mi>h</mi>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mn>3</mn>
+                      </mrow>
+                    </msup>
+                    <msup>
+                      <mi>f</mi>
+                      <mo>″</mo>
+                    </msup>
+                    <mo stretchy="false">(</mo>
+                    <msub>
+                      <mi>ξ<!-- ξ --></mi>
+                      <mrow class="MJX-TeXAtom-ORD">
+                        <mi>i</mi>
+                      </mrow>
+                    </msub>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                  <mo>|</mo>
+                </mrow>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mi>n</mi>
+                <mo stretchy="false">[</mo>
+                <mo>−<!-- − --></mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mfrac>
+                    <mn>1</mn>
+                    <mn>12</mn>
+                  </mfrac>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <msup>
+                  <mi>h</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <msup>
+                  <mi>f</mi>
+                  <mo>″</mo>
+                </msup>
+                <mo stretchy="false">(</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mover>
+                      <mi>ξ<!-- ξ --></mi>
+                      <mo stretchy="false">¯<!-- ¯ --></mo>
+                    </mover>
+                  </mrow>
+                </mrow>
+                <mo stretchy="false">)</mo>
+                <mo stretchy="false">]</mo>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd></mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mo>−<!-- − --></mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mfrac>
+                    <mn>1</mn>
+                    <mn>12</mn>
+                  </mfrac>
+                </mrow>
+                <mo stretchy="false">(</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>n</mi>
+                  </mrow>
+                </msub>
+                <mo>−<!-- − --></mo>
+                <msub>
+                  <mi>x</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>0</mn>
+                  </mrow>
+                </msub>
+                <mo stretchy="false">)</mo>
+                <msup>
+                  <mi>h</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <msup>
+                  <mi>f</mi>
+                  <mo>″</mo>
+                </msup>
+                <mo stretchy="false">(</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mover>
+                      <mi>ξ<!-- ξ --></mi>
+                      <mo stretchy="false">¯<!-- ¯ --></mo>
+                    </mover>
+                  </mrow>
+                </mrow>
+                <mo stretchy="false">)</mo>
+                <mo>=</mo>
+                <mi>O</mi>
+                <mo stretchy="false">(</mo>
+                <msup>
+                  <mi>h</mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mn>2</mn>
+                  </mrow>
+                </msup>
+                <mo stretchy="false">)</mo>
+                <mspace width="thinmathspace"></mspace>
+                <mo>,</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\begin{aligned}\left|\sum _{i=0}^{n-1}-{\frac {1}{12}}h^{3}f''(\xi _{i})\right|&amp;=n[-{\frac {1}{12}}(x_{n}-x_{0})h^{2}f''({\bar {\xi }})]\\&amp;=-{\frac {1}{12}}(x_{n}-x_{0})h^{2}f''({\bar {\xi }})=O(h^{2})\,,\end{aligned}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/0d81a4e8203c7108ca43442ad4c57c8d30d1d4b9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -5.547ex; margin-bottom: -0.291ex; width:55.08ex; height:12.843ex;" alt="{\displaystyle {\begin{aligned}\left|\sum _{i=0}^{n-1}-{\frac {1}{12}}h^{3}f&#39;&#39;(\xi _{i})\right|&amp;=n[-{\frac {1}{12}}(x_{n}-x_{0})h^{2}f&#39;&#39;({\bar {\xi }})]\\&amp;=-{\frac {1}{12}}(x_{n}-x_{0})h^{2}f&#39;&#39;({\bar {\xi }})=O(h^{2})\,,\end{aligned}}}"></span></div>
+</td>
+<td style="vertical-align:middle; width:99%; border:none; padding:0.08em;">
+<div style="margin:0;">
+<table style="border-collapse:collapse; background:none; margin:0; border:none; width:99%;">
+<tbody><tr>
+<td style="border:none; padding:0.08em;" rowspan="2"><p style="margin:0; font-size:4pt;">&nbsp;</p>
+</td>
+<td style="width:100%; border:none; padding:0.08em;"><p style="margin:0; font-size:1pt;">&nbsp;</p>
+</td>
+<td style="border:none; padding:0.08em;" rowspan="2"><p style="margin:0; font-size:4pt;">&nbsp;</p>
+</td></tr>
+<tr>
+<td style="border-left:none; border-top:0px none #e5e5e5; border-right:none; border-bottom:none; padding:0.08em;">
+<p style="margin:0; font-size:1pt;">&nbsp;</p>
+</td></tr></tbody></table>
+</div>
+</td>
+<td style="vertical-align:middle; border:none; padding:0.08em;" class="nowrap"><p style="margin:0pt;"><b>(<cite id="math_2"><span class="reference plainlinksneverexpand" style="font-weight:bold;"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#equation_2">2</a></span></cite>)</b></p>
+</td></tr></tbody></table></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{i}\leqslant \xi _{i}\leqslant x_{i+1}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>ξ<!-- ξ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{i}\leqslant \xi _{i}\leqslant x_{i+1}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/f94d08d4abd99e8e7df3996a11ad6b76b297eb71" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:14.374ex; height:2.509ex;" alt="{\displaystyle x_{i}\leqslant \xi _{i}\leqslant x_{i+1}}"></span>,  <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{0}\leqslant {\bar {\xi }}\leqslant x_{n}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mover>
+              <mi>ξ<!-- ξ --></mi>
+              <mo stretchy="false">¯<!-- ¯ --></mo>
+            </mover>
+          </mrow>
+        </mrow>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{0}\leqslant {\bar {\xi }}\leqslant x_{n}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/f14168c79c219c9e6ee7d40e320466c3efff7dc6" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:12.557ex; height:2.843ex;" alt="{\displaystyle x_{0}\leqslant {\bar {\xi }}\leqslant x_{n}}"></span>.
+</p><p>To justify (<cite id="math_2" style="font-style: normal;"><b><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#math_2">2</a></b></cite>), we can need the theorem below<sup id="cite_ref-2" class="reference"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#cite_note-2">[2]</a></sup> in page 345:<br>
+</p>
+<pre>If <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle g(x)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g(x)}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/c6ca91363022bd5e4dcb17e5ef29f78b8ef00b59" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:4.255ex; height:2.843ex;" alt="{\displaystyle g(x)}"></span> is continuous and the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle c_{i}\geq 0}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>c</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>≥<!-- ≥ --></mo>
+        <mn>0</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle c_{i}\geq 0}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/06ba7e992352b51f562895423554da3b841e0a53" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:6.067ex; height:2.509ex;" alt="{\displaystyle c_{i}\geq 0}"></span>, then for some value <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \theta }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>θ<!-- θ --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \theta }</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/6e5ab2664b422d53eb0c7df3b87e1360d75ad9af" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.09ex; height:2.176ex;" alt="{\displaystyle \theta }"></span> in the interval of all the arguments <br>
+<span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle g(\theta )\sum c_{i}=\sum \limits _{i=1}^{N}c_{i}g(\theta _{i})\,.}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo stretchy="false">(</mo>
+        <mi>θ<!-- θ --></mi>
+        <mo stretchy="false">)</mo>
+        <mo>∑<!-- ∑ --></mo>
+        <msub>
+          <mi>c</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <munderover>
+          <mo movablelimits="false">∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>=</mo>
+            <mn>1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>N</mi>
+          </mrow>
+        </munderover>
+        <msub>
+          <mi>c</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mi>g</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>θ<!-- θ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mspace width="thinmathspace"></mspace>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g(\theta )\sum c_{i}=\sum \limits _{i=1}^{N}c_{i}g(\theta _{i})\,.}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/43120179ff70fb78d0958598871e94ba9ce4e98c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.005ex; width:24.448ex; height:7.343ex;" alt="{\displaystyle g(\theta )\sum c_{i}=\sum \limits _{i=1}^{N}c_{i}g(\theta _{i})\,.}"></span>
+</pre>
+<h3><span id="The_Simpson.27s_1.2F3_Rule"></span><span class="mw-headline" id="The_Simpson&#39;s_1/3_Rule">The Simpson's 1/3 Rule</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=5" class="mw-editsection-visualeditor" title="Edit section: The Simpson&#39;s 1/3 Rule">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=5" title="Edit section: The Simpson&#39;s 1/3 Rule">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Consider <a href="https://en.wikipedia.org/wiki/Simpson%27s_rule" class="extiw" title="w:Simpson&#39;s rule"> Simpson's 1/3 rule</a>. In this case, three equally spaced points are used for integration. Thus <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n+1=3}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo>=</mo>
+        <mn>3</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n+1=3}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/6009031c383b0878ee02e9e87521dc0aad31187a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.505ex; width:9.658ex; height:2.343ex;" alt="{\displaystyle n+1=3}"></span>. Applying (<cite id="math_1" style="font-style: normal;"><b><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#math_1">1</a></b></cite>), we get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{2}{\frac {s(s-1)(s-2)}{6}}h^{3}f&#39;&#39;&#39;(\xi )ds=0}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi>h</mi>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </munderover>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>s</mi>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>2</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mn>6</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mo>‴</mo>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>s</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{2}{\frac {s(s-1)(s-2)}{6}}h^{3}f'''(\xi )ds=0}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/e3d1e10faa791ddd25224e954afae431865da25f" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -4.005ex; width:46.194ex; height:9.176ex;" alt="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{2}{\frac {s(s-1)(s-2)}{6}}h^{3}f&#39;&#39;&#39;(\xi )ds=0}"></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{0}\leqslant \xi \leqslant x_{2}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{0}\leqslant \xi \leqslant x_{2}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/93401b4df9b6c61dd6deeca9035c67080ddb9561" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:11.995ex; height:2.509ex;" alt="{\displaystyle x_{0}\leqslant \xi \leqslant x_{2}}"></span>.
+</p><p>This doesn't mean that the error is zero. It simply means that the cubic term is identically zero. The error term can be obtained from the next term in the <a href="https://en.wikipedia.org/wiki/Newton_polynomial#Definition" class="extiw" title="w:Newton polynomial">Newton polynomial</a>, obtaining  
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{2}{\frac {s(s-1)(s-2)(s-3)}{24}}h^{4}f^{(4)}(\xi )ds=-{\frac {1}{90}}h^{5}f^{(4)}(\xi )=O(h^{5})\,.}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi>h</mi>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </munderover>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>s</mi>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>2</mn>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>3</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mn>24</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>4</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mn>4</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>s</mi>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mn>90</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>5</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mn>4</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>5</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">)</mo>
+        <mspace width="thinmathspace"></mspace>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{2}{\frac {s(s-1)(s-2)(s-3)}{24}}h^{4}f^{(4)}(\xi )ds=-{\frac {1}{90}}h^{5}f^{(4)}(\xi )=O(h^{5})\,.}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/e82b0c7027c86f4c87817d800c05a49edffde0ca" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -4.005ex; width:76.642ex; height:9.176ex;" alt="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{2}{\frac {s(s-1)(s-2)(s-3)}{24}}h^{4}f^{(4)}(\xi )ds=-{\frac {1}{90}}h^{5}f^{(4)}(\xi )=O(h^{5})\,.}"></span></dd></dl>
+<p>Thus the local error is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle O(h^{5})}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>5</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle O(h^{5})}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/f4f84b0c10beca633d2f744701aa5fdbe05576d3" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.976ex; height:3.176ex;" alt="{\displaystyle O(h^{5})}"></span> and the global error is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle O(h^{4})}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>4</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle O(h^{4})}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/02f1837b7abfa7284a6f1f45ae38fa1795f1a3d2" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:5.976ex; height:3.176ex;" alt="{\displaystyle O(h^{4})}"></span>.
+</p>
+<h3><span id="The_Simpson.27s_3.2F8_Rule"></span><span class="mw-headline" id="The_Simpson&#39;s_3/8_Rule">The Simpson's 3/8 Rule</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=6" class="mw-editsection-visualeditor" title="Edit section: The Simpson&#39;s 3/8 Rule">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=6" title="Edit section: The Simpson&#39;s 3/8 Rule">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Consider <a href="https://en.wikipedia.org/wiki/Simpson%27s_rule#Simpson.27s_3.2F8_rule" class="extiw" title="w:Simpson&#39;s rule">Simpson's 3/8 rule</a>. In this case, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n+1=4}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+        <mo>+</mo>
+        <mn>1</mn>
+        <mo>=</mo>
+        <mn>4</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n+1=4}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/1d303501a28457bd5651b5ec8b624ac7f1030956" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.505ex; width:9.658ex; height:2.343ex;" alt="{\displaystyle n+1=4}"></span> since four equally spaced points are used. Applying (<cite id="math_1" style="font-style: normal;"><b><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#math_1">1</a></b></cite>), we get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{3}{\frac {s(s-1)(s-2)(s-3)}{24}}h^{4}f^{(4)}(\xi )ds=-{\frac {3}{80}}h^{5}f^{(4)}(\xi )=O(h^{5})}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi>h</mi>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3</mn>
+          </mrow>
+        </munderover>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>s</mi>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>1</mn>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>2</mn>
+              <mo stretchy="false">)</mo>
+              <mo stretchy="false">(</mo>
+              <mi>s</mi>
+              <mo>−<!-- − --></mo>
+              <mn>3</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mn>24</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>4</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mn>4</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>s</mi>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>3</mn>
+            <mn>80</mn>
+          </mfrac>
+        </mrow>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>5</mn>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mn>4</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>O</mi>
+        <mo stretchy="false">(</mo>
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>5</mn>
+          </mrow>
+        </msup>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{3}{\frac {s(s-1)(s-2)(s-3)}{24}}h^{4}f^{(4)}(\xi )ds=-{\frac {3}{80}}h^{5}f^{(4)}(\xi )=O(h^{5})}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/a17c0d6740baf3ca33c3b924f1a03eec7b883653" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -4.005ex; width:75.608ex; height:9.176ex;" alt="{\displaystyle E_{\text{integrate}}=h\int \limits _{0}^{3}{\frac {s(s-1)(s-2)(s-3)}{24}}h^{4}f^{(4)}(\xi )ds=-{\frac {3}{80}}h^{5}f^{(4)}(\xi )=O(h^{5})}"></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x_{0}\leqslant \xi \leqslant x_{3}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msub>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mi>ξ<!-- ξ --></mi>
+        <mo>⩽<!-- ⩽ --></mo>
+        <msub>
+          <mi>x</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3</mn>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x_{0}\leqslant \xi \leqslant x_{3}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/d0f32dfd41bf2a650bb938920592a3ba962b594c" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:11.995ex; height:2.509ex;" alt="{\displaystyle x_{0}\leqslant \xi \leqslant x_{3}}"></span>.
+</p><p>Both the Simpon's 1/3 rule and the 3/8 rule have error terms of order <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle h^{5}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msup>
+          <mi>h</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>5</mn>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h^{5}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/24f5acf4ab3ea469ba4831d0257a8c03528cacfc" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.393ex; height:2.676ex;" alt="{\displaystyle h^{5}}"></span>. With smaller coefficient, the 1/3 rule seems more accurate. Then why do we need the 3/8 rule? The 3/8 rule is useful when the total number of increments <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle n}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>n</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle n}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/a601995d55609f2d9f5e233e36fbe9ea26011b3b" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.395ex; height:1.676ex;" alt="n"></span> is odd. Three increments can be used with the 3/8 rule, and then the rest even number of increments can be used with 1/3 rule.
+</p>
+<h2><span class="mw-headline" id="A_Numerical_Example">A Numerical Example</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=7" class="mw-editsection-visualeditor" title="Edit section: A Numerical Example">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=7" title="Edit section: A Numerical Example">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Given the set of data points, solve the numerical integration <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle I=\int \limits _{3.1}^{3.9}f(x)dx}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>I</mi>
+        <mo>=</mo>
+        <munderover>
+          <mo>∫<!-- ∫ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3.1</mn>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>3.9</mn>
+          </mrow>
+        </munderover>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mi>d</mi>
+        <mi>x</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle I=\int \limits _{3.1}^{3.9}f(x)dx}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/061df9ec50009c3d92a51c356275aa21aabd1116" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -4.005ex; width:14.354ex; height:9.176ex;" alt="{\displaystyle I=\int \limits _{3.1}^{3.9}f(x)dx}"></span>
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>x</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/87f9e315fd7e2ba406057a97300593c4802b53e4" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.33ex; height:1.676ex;" alt="x"></span></th>
+<th><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle f(x)=-{\frac {1}{x}}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>1</mn>
+            <mi>x</mi>
+          </mfrac>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(x)=-{\frac {1}{x}}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/f852f204fb8bced9d9648c372f25975ee6fb3be0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:11.49ex; height:5.176ex;" alt="{\displaystyle f(x)=-{\frac {1}{x}}}"></span>
+</th></tr>
+<tr>
+<td>3.1</td>
+<td>-0.32258065
+</td></tr>
+<tr>
+<td>3.5</td>
+<td>-0.28571429
+</td></tr>
+<tr>
+<td>3.9</td>
+<td>-0.25641026
+</td></tr></tbody></table>
+<h3><span class="mw-headline" id="Solution">Solution</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=8" class="mw-editsection-visualeditor" title="Edit section: Solution">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=8" title="Edit section: Solution">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Use the trapezoid rule. First try <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle h=0.8}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo>=</mo>
+        <mn>0.8</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h=0.8}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/3edfd3167711b4711dc3d4a11457e941b68d673e" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:7.409ex; height:2.176ex;" alt="{\displaystyle h=0.8}"></span>. That is, use only the two end points. We can get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle I(h=0.8)={\frac {0.8}{2}}(-0.32258065-0.25641026)=-0.23159636}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>I</mi>
+        <mo stretchy="false">(</mo>
+        <mi>h</mi>
+        <mo>=</mo>
+        <mn>0.8</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>0.8</mn>
+            <mn>2</mn>
+          </mfrac>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mo>−<!-- − --></mo>
+        <mn>0.32258065</mn>
+        <mo>−<!-- − --></mo>
+        <mn>0.25641026</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mn>0.23159636</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle I(h=0.8)={\frac {0.8}{2}}(-0.32258065-0.25641026)=-0.23159636}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/5c8082ee320af50ebc991f126ebebc9f108bf194" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:61.988ex; height:5.176ex;" alt="{\displaystyle I(h=0.8)={\frac {0.8}{2}}(-0.32258065-0.25641026)=-0.23159636}"></span></dd></dl>
+<p>Compared with the exact solution <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle I=-0.22957444}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>I</mi>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mn>0.22957444</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle I=-0.22957444}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/b3868d9c800d097a901446aa5366754f2939282a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.505ex; width:17.187ex; height:2.343ex;" alt="{\displaystyle I=-0.22957444}"></span> we have
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=0.00202192\,.}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mn>0.00202192</mn>
+        <mspace width="thinmathspace"></mspace>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=0.00202192\,.}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/04fd414920499105f2c32bc06b5548a4f2d2910a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:23.588ex; height:2.843ex;" alt="{\displaystyle E_{\text{integrate}}=0.00202192\,.}"></span></dd></dl>
+<p>Using all three points with <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle h=0.4}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo>=</mo>
+        <mn>0.4</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h=0.4}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/e244784526b00361af3797af0d072fcfec3a11d9" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:7.409ex; height:2.176ex;" alt="{\displaystyle h=0.4}"></span> we can get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle I(h=0.4)={\frac {0.4}{2}}(-0.32258065-2\times 0.28571429-0.25641026)=-0.23008389}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>I</mi>
+        <mo stretchy="false">(</mo>
+        <mi>h</mi>
+        <mo>=</mo>
+        <mn>0.4</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mn>0.4</mn>
+            <mn>2</mn>
+          </mfrac>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mo>−<!-- − --></mo>
+        <mn>0.32258065</mn>
+        <mo>−<!-- − --></mo>
+        <mn>2</mn>
+        <mo>×<!-- × --></mo>
+        <mn>0.28571429</mn>
+        <mo>−<!-- − --></mo>
+        <mn>0.25641026</mn>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo>−<!-- − --></mo>
+        <mn>0.23008389</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle I(h=0.4)={\frac {0.4}{2}}(-0.32258065-2\times 0.28571429-0.25641026)=-0.23008389}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/2756a6bec908c70c83c000adcb8c7a13c7e638de" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.838ex; width:79.94ex; height:5.176ex;" alt="{\displaystyle I(h=0.4)={\frac {0.4}{2}}(-0.32258065-2\times 0.28571429-0.25641026)=-0.23008389}"></span></dd></dl>
+<p>and so
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle E_{\text{integrate}}=0.00050945\,.}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>integrate</mtext>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mn>0.00050945</mn>
+        <mspace width="thinmathspace"></mspace>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle E_{\text{integrate}}=0.00050945\,.}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/daf5088f6db6bd79d37776f036701be72cd7d1ce" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:23.588ex; height:2.843ex;" alt="{\displaystyle E_{\text{integrate}}=0.00050945\,.}"></span></dd></dl>
+<p>Thus the error ratio is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {E_{\text{integrate}}(h=0.8)}{E_{\text{integrate}}(h=0.4)}}=3.97}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>E</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mtext>integrate</mtext>
+                </mrow>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mo>=</mo>
+              <mn>0.8</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>E</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mtext>integrate</mtext>
+                </mrow>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mo>=</mo>
+              <mn>0.4</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mn>3.97</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {E_{\text{integrate}}(h=0.8)}{E_{\text{integrate}}(h=0.4)}}=3.97}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/9898ff62edc93bfb5875bd1945060e73df1460f0" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.671ex; width:25.634ex; height:6.509ex;" alt="{\displaystyle {\frac {E_{\text{integrate}}(h=0.8)}{E_{\text{integrate}}(h=0.4)}}=3.97}"></span>. This is close to what we can get by inspecting
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {E_{\text{integrate}}(h)}{E_{\text{integrate}}(h/2)}}={\frac {O(h^{2})}{O(h/2)^{2}}}=2^{2}=4}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>E</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mtext>integrate</mtext>
+                </mrow>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>E</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mtext>integrate</mtext>
+                </mrow>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>O</mi>
+              <mo stretchy="false">(</mo>
+              <msup>
+                <mi>h</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>2</mn>
+                </mrow>
+              </msup>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mrow>
+              <mi>O</mi>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+              <msup>
+                <mo stretchy="false">)</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>2</mn>
+                </mrow>
+              </msup>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <msup>
+          <mn>2</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>2</mn>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <mn>4</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {E_{\text{integrate}}(h)}{E_{\text{integrate}}(h/2)}}={\frac {O(h^{2})}{O(h/2)^{2}}}=2^{2}=4}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/6f84ba36a67d4dfb5471f3f3339c98d9ea07fb0f" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.671ex; width:36.467ex; height:6.676ex;" alt="{\displaystyle {\frac {E_{\text{integrate}}(h)}{E_{\text{integrate}}(h/2)}}={\frac {O(h^{2})}{O(h/2)^{2}}}=2^{2}=4}"></span>.</dd></dl>
+<h2><span class="mw-headline" id="Exercises">Exercises</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=9" class="mw-editsection-visualeditor" title="Edit section: Exercises">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=9" title="Edit section: Exercises">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span id="Exercise_1.5B3.5D"></span><span class="mw-headline" id="Exercise_1[3]">Exercise 1<sup id="cite_ref-3" class="reference"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#cite_note-3">[3]</a></sup></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=10" class="mw-editsection-visualeditor" title="Edit section: Exercise 1[3]">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=10" title="Edit section: Exercise 1[3]">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Using the data given below, find the maximum error incurred in using Newton's forward interpolation formula to approximate <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x=0.14}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>x</mi>
+        <mo>=</mo>
+        <mn>0.14</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x=0.14}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/790c99647b263bdbdb7cde04a71c5663e3428922" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:8.562ex; height:2.176ex;" alt="{\displaystyle x=0.14}"></span>.
+</p>
+<table class="wikitable">
+
+<tbody><tr>
+<th><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>x</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/87f9e315fd7e2ba406057a97300593c4802b53e4" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.33ex; height:1.676ex;" alt="x"></span></th>
+<th><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle e^{x}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msup>
+          <mi>e</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle e^{x}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/841c0d168e64191c45a45e54c7e447defd17ec6a" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:2.256ex; height:2.343ex;" alt="e^{x}"></span>
+</th></tr>
+<tr>
+<td>0.1</td>
+<td>1.10517
+</td></tr>
+<tr>
+<td>0.2</td>
+<td>1.22140
+</td></tr>
+<tr>
+<td>0.3</td>
+<td>1.34986
+</td></tr>
+<tr>
+<td>0.4</td>
+<td>1.49182
+</td></tr>
+<tr>
+<td>0.5</td>
+<td>1.64872
+</td></tr></tbody></table>
+<div class="NavFrame selected"><div class="NavHead" title="show contents">
+<p>Solution:
+</p>
+<a class="NavToggle">▼</a></div><div class="NavContent" style="text-align: left; display: none;">
+<p>According the general error formula of polynomial interpolation 
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle |E_{\text{interpolate}}|\leqslant \left|{\frac {1}{(n+1)!}}(x-x_{0})(x-x_{1})\cdots (x-x_{n})\right|[\max |f^{(n+1)}(x)|]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>interpolate</mtext>
+          </mrow>
+        </msub>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mrow>
+          <mo>|</mo>
+          <mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mo stretchy="false">(</mo>
+                  <mi>n</mi>
+                  <mo>+</mo>
+                  <mn>1</mn>
+                  <mo stretchy="false">)</mo>
+                  <mo>!</mo>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>−<!-- − --></mo>
+            <msub>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mn>0</mn>
+              </mrow>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>−<!-- − --></mo>
+            <msub>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mn>1</mn>
+              </mrow>
+            </msub>
+            <mo stretchy="false">)</mo>
+            <mo>⋯<!-- ⋯ --></mo>
+            <mo stretchy="false">(</mo>
+            <mi>x</mi>
+            <mo>−<!-- − --></mo>
+            <msub>
+              <mi>x</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>n</mi>
+              </mrow>
+            </msub>
+            <mo stretchy="false">)</mo>
+          </mrow>
+          <mo>|</mo>
+        </mrow>
+        <mo stretchy="false">[</mo>
+        <mo movablelimits="true" form="prefix">max</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle |E_{\text{interpolate}}|\leqslant \left|{\frac {1}{(n+1)!}}(x-x_{0})(x-x_{1})\cdots (x-x_{n})\right|[\max |f^{(n+1)}(x)|]}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/393d5671f74a0443e68be29f0eada4ccb3f57c49" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.671ex; width:69.591ex; height:6.509ex;" alt="{\displaystyle |E_{\text{interpolate}}|\leqslant \left|{\frac {1}{(n+1)!}}(x-x_{0})(x-x_{1})\cdots (x-x_{n})\right|[\max |f^{(n+1)}(x)|]}"></span></dd></dl>
+<p>where <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle x\in [0.1,0.5]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>x</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mo stretchy="false">[</mo>
+        <mn>0.1</mn>
+        <mo>,</mo>
+        <mn>0.5</mn>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle x\in [0.1,0.5]}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/606b650ecf23aa35cc45f647703c26cc9b952ccf" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:12.441ex; height:2.843ex;" alt="{\displaystyle x\in [0.1,0.5]}"></span>.
+</p><p>Given that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle h=0.1,n=4,x=0.14}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo>=</mo>
+        <mn>0.1</mn>
+        <mo>,</mo>
+        <mi>n</mi>
+        <mo>=</mo>
+        <mn>4</mn>
+        <mo>,</mo>
+        <mi>x</mi>
+        <mo>=</mo>
+        <mn>0.14</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h=0.1,n=4,x=0.14}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/2b80650ae8b36650eeeb29e2fa001a879fc14d50" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:23.695ex; height:2.509ex;" alt="{\displaystyle h=0.1,n=4,x=0.14}"></span>, and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle \max |f^{(n+1)}(x)|=e^{0.5}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo movablelimits="true" form="prefix">max</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo stretchy="false">(</mo>
+            <mi>n</mi>
+            <mo>+</mo>
+            <mn>1</mn>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>=</mo>
+        <msup>
+          <mi>e</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0.5</mn>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \max |f^{(n+1)}(x)|=e^{0.5}}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/9e943cbfe13ac41090cc5d3498b840db6acda94f" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:21.58ex; height:3.343ex;" alt="{\displaystyle \max |f^{(n+1)}(x)|=e^{0.5}}"></span>, we can get
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle |E_{\text{interpolate}}|\leqslant \left|{\frac {1}{5!}}(0.14-0.1)(0.14-0.2)\cdots (0.14-0.5)e^{0.5}\right|&lt;0.0000005}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <msub>
+          <mi>E</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>interpolate</mtext>
+          </mrow>
+        </msub>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mo stretchy="false">|</mo>
+        </mrow>
+        <mo>⩽<!-- ⩽ --></mo>
+        <mrow>
+          <mo>|</mo>
+          <mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mfrac>
+                <mn>1</mn>
+                <mrow>
+                  <mn>5</mn>
+                  <mo>!</mo>
+                </mrow>
+              </mfrac>
+            </mrow>
+            <mo stretchy="false">(</mo>
+            <mn>0.14</mn>
+            <mo>−<!-- − --></mo>
+            <mn>0.1</mn>
+            <mo stretchy="false">)</mo>
+            <mo stretchy="false">(</mo>
+            <mn>0.14</mn>
+            <mo>−<!-- − --></mo>
+            <mn>0.2</mn>
+            <mo stretchy="false">)</mo>
+            <mo>⋯<!-- ⋯ --></mo>
+            <mo stretchy="false">(</mo>
+            <mn>0.14</mn>
+            <mo>−<!-- − --></mo>
+            <mn>0.5</mn>
+            <mo stretchy="false">)</mo>
+            <msup>
+              <mi>e</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mn>0.5</mn>
+              </mrow>
+            </msup>
+          </mrow>
+          <mo>|</mo>
+        </mrow>
+        <mo>&lt;</mo>
+        <mn>0.0000005</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle |E_{\text{interpolate}}|\leqslant \left|{\frac {1}{5!}}(0.14-0.1)(0.14-0.2)\cdots (0.14-0.5)e^{0.5}\right|&lt;0.0000005}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/a8414de059bbad18146d8da4519790c782da8730" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.171ex; width:73.276ex; height:5.509ex;" alt="{\displaystyle |E_{\text{interpolate}}|\leqslant \left|{\frac {1}{5!}}(0.14-0.1)(0.14-0.2)\cdots (0.14-0.5)e^{0.5}\right|&lt;0.0000005}"></span>.</dd></dl>
+</div></div><div class="NavEnd"> </div>
+<h3><span class="mw-headline" id="Exercise_2">Exercise 2</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=11" class="mw-editsection-visualeditor" title="Edit section: Exercise 2">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=11" title="Edit section: Exercise 2">edit source</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>When using Simpson's 1/3, what is the error ratio supposed to be?
+</p>
+<div class="NavFrame selected"><div class="NavHead" title="show contents">
+<p>Solution:
+</p>
+<a class="NavToggle">▼</a></div><div class="NavContent" style="text-align: left; display: none;">
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML" alttext="{\displaystyle {\frac {E_{\text{integrate}}(h)}{E_{\text{integrate}}(h/2)}}={\frac {O(h)^{4}}{O(h/2)^{4}}}=2^{4}=16\,.}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <msub>
+                <mi>E</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mtext>integrate</mtext>
+                </mrow>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mo stretchy="false">)</mo>
+            </mrow>
+            <mrow>
+              <msub>
+                <mi>E</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mtext>integrate</mtext>
+                </mrow>
+              </msub>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+              <mo stretchy="false">)</mo>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mfrac>
+            <mrow>
+              <mi>O</mi>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <msup>
+                <mo stretchy="false">)</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>4</mn>
+                </mrow>
+              </msup>
+            </mrow>
+            <mrow>
+              <mi>O</mi>
+              <mo stretchy="false">(</mo>
+              <mi>h</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mo>/</mo>
+              </mrow>
+              <mn>2</mn>
+              <msup>
+                <mo stretchy="false">)</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mn>4</mn>
+                </mrow>
+              </msup>
+            </mrow>
+          </mfrac>
+        </mrow>
+        <mo>=</mo>
+        <msup>
+          <mn>2</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>4</mn>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <mn>16</mn>
+        <mspace width="thinmathspace"></mspace>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\frac {E_{\text{integrate}}(h)}{E_{\text{integrate}}(h/2)}}={\frac {O(h)^{4}}{O(h/2)^{4}}}=2^{4}=16\,.}</annotation>
+  </semantics>
+</math></span><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/64563d46ec56f4e212dcd7f2c820ee549ff2c6ed" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.671ex; width:38.664ex; height:6.676ex;" alt="{\displaystyle {\frac {E_{\text{integrate}}(h)}{E_{\text{integrate}}(h/2)}}={\frac {O(h)^{4}}{O(h/2)^{4}}}=2^{4}=16\,.}"></span> 
+</p>
+</div></div><div class="NavEnd"> </div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit&amp;section=12" class="mw-editsection-visualeditor" title="Edit section: References">edit</a><span class="mw-editsection-divider"> | </span><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;section=12" title="Edit section: References">edit source</a><span class="mw-editsection-bracket">]</span></span></h2>
+<style data-mw-deduplicate="TemplateStyles:r2289029">.mw-parser-output .reflist{font-size:90%;margin-bottom:0.5em;list-style-type:decimal}.mw-parser-output .reflist .references{font-size:100%;margin-bottom:0;list-style-type:inherit}.mw-parser-output .reflist-columns-2{column-width:30em}.mw-parser-output .reflist-columns-3{column-width:25em}.mw-parser-output .reflist-columns{margin-top:0.3em}.mw-parser-output .reflist-columns ol{margin-top:0}.mw-parser-output .reflist-columns li{page-break-inside:avoid;break-inside:avoid-column}.mw-parser-output .reflist-upper-alpha{list-style-type:upper-alpha}.mw-parser-output .reflist-upper-roman{list-style-type:upper-roman}.mw-parser-output .reflist-lower-alpha{list-style-type:lower-alpha}.mw-parser-output .reflist-lower-greek{list-style-type:lower-greek}.mw-parser-output .reflist-lower-roman{list-style-type:lower-roman}</style><div class="reflist">
+<div class="mw-references-wrap"><ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#cite_ref-1" aria-label="Jump up" title="Jump up">↑</a></span> <span class="reference-text"><span class="citation book">Hoffman, Joe D. (2001). <i>Numerical Methods for Engineers and Scientists</i> (2nd ed.). Marcel Derkker, INC. ISBN&nbsp;<a href="https://en.wikiversity.org/wiki/Special:BookSources/0-8247-0443-6" title="Special:BookSources/0-8247-0443-6">0-8247-0443-6</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Numerical+Methods+for+Engineers+and+Scientists&amp;rft.aulast=Hoffman%2C+Joe+D.&amp;rft.au=Hoffman%2C+Joe+D.&amp;rft.date=2001&amp;rft.edition=2nd&amp;rft.pub=Marcel+Derkker%2C+INC&amp;rft.isbn=0-8247-0443-6&amp;rfr_id=info:sid/en.wikipedia.org:Error_of_Analysis_of_Newton-Cotes_formulas"><span style="display: none;">&nbsp;</span></span></span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#cite_ref-2" aria-label="Jump up" title="Jump up">↑</a></span> <span class="reference-text"><span class="citation book">Hamming, R. W. (1986). <a rel="nofollow" class="external text" href="http://books.google.com/books/about/Numerical_Methods_for_Scientists_and_Eng.html?id=Y3YSCmWBVwoC"><i>Numerical Methods for Scientists and Engineers</i></a> (2nd ed.). New York: Dover Publications. ISBN&nbsp;<a href="https://en.wikiversity.org/wiki/Special:BookSources/0-486-65241-6" title="Special:BookSources/0-486-65241-6">0-486-65241-6</a><span class="printonly">. <a rel="nofollow" class="external free" href="http://books.google.com/books/about/Numerical_Methods_for_Scientists_and_Eng.html?id=Y3YSCmWBVwoC">http://books.google.com/books/about/Numerical_Methods_for_Scientists_and_Eng.html?id=Y3YSCmWBVwoC</a></span>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Numerical+Methods+for+Scientists+and+Engineers&amp;rft.aulast=Hamming%2C+R.+W.&amp;rft.au=Hamming%2C+R.+W.&amp;rft.date=1986&amp;rft.edition=2nd&amp;rft.place=New+York&amp;rft.pub=Dover+Publications&amp;rft.isbn=0-486-65241-6&amp;rft_id=http%3A%2F%2Fbooks.google.com%2Fbooks%2Fabout%2FNumerical_Methods_for_Scientists_and_Eng.html%3Fid%3DY3YSCmWBVwoC&amp;rfr_id=info:sid/en.wikipedia.org:Error_of_Analysis_of_Newton-Cotes_formulas"><span style="display: none;">&nbsp;</span></span></span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas#cite_ref-3" aria-label="Jump up" title="Jump up">↑</a></span> <span class="reference-text"><span class="citation book">Tenenbaum, Morris; Pollard, Harry (1985). <i>Ordinary Differential Equations: An Elementary Textbook for Students of Mathematics, Engineering, and the Sciences</i>. New York: Dover Publications. ISBN&nbsp;<a href="https://en.wikiversity.org/wiki/Special:BookSources/9780486649405" title="Special:BookSources/9780486649405">9780486649405</a>.</span><span class="Z3988" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook&amp;rft.genre=book&amp;rft.btitle=Ordinary+Differential+Equations%3A+An+Elementary+Textbook+for+Students+of+Mathematics%2C+Engineering%2C+and+the+Sciences&amp;rft.aulast=Tenenbaum%2C+Morris&amp;rft.au=Tenenbaum%2C+Morris&amp;rft.au=Pollard%2C+Harry&amp;rft.date=1985&amp;rft.place=New+York&amp;rft.pub=Dover+Publications&amp;rft.isbn=9780486649405&amp;rfr_id=info:sid/en.wikipedia.org:Error_of_Analysis_of_Newton-Cotes_formulas"><span style="display: none;">&nbsp;</span></span></span>
+</li>
+</ol></div></div>
+<!-- 
+NewPP limit report
+Parsed by mw1440
+Cached time: 20211204185335
+Cache expiry: 1814400
+Reduced expiry: false
+Complications: []
+CPU time usage: 0.196 seconds
+Real time usage: 0.270 seconds
+Preprocessor visited node count: 2878/1000000
+Post‐expand include size: 18270/2097152 bytes
+Template argument size: 4592/2097152 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 0/500
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 7463/5000000 bytes
+Lua time usage: 0.005/10.000 seconds
+Lua memory usage: 827146/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  116.224      1 -total
+ 59.78%   69.477      1 Template:Reflist
+ 36.51%   42.433      3 Template:Cite_book
+ 34.72%   40.357      2 Template:NumBlk
+ 33.03%   38.389      3 Template:Citation/core
+ 14.18%   16.486      4 Template:Str_len
+ 14.02%   16.292     12 Template:Str_len/core
+  7.51%    8.732      3 Template:Citation/identifier
+  3.29%    3.826      3 Template:Citation/make_link
+  2.35%    2.731      2 Template:EquationRef
+-->
+
+<!-- Saved in parser cache with key enwikiversity:pcache:idhash:139007-0!canonical and timestamp 20211204185335 and revision id 2240715. Serialized with JSON.
+ -->
+</div><noscript><img src="//en.wikiversity.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript>
+<div class="printfooter">Retrieved from "<a dir="ltr" href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;oldid=2240715">https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;oldid=2240715</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikiversity.org/wiki/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://en.wikiversity.org/wiki/Category:Numerical_analysis" title="Category:Numerical analysis">Numerical analysis</a></li><li><a href="https://en.wikiversity.org/wiki/Category:Freshly_started_resources" title="Category:Freshly started resources">Freshly started resources</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation">
+	<h3 id="p-personal-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="pt-anonuserpage" class="mw-list-item"><span>Not logged in</span></li><li id="pt-anontalk" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [alt-shift-n]" accesskey="n"><span>Talk</span></a></li><li id="pt-anoncontribs" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [alt-shift-y]" accesskey="y"><span>Contributions</span></a></li><li id="pt-createaccount" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Special:CreateAccount&amp;returnto=Error+of+Analysis+of+Newton-Cotes+formulas" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li><li id="pt-login" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Special:UserLogin&amp;returnto=Error+of+Analysis+of+Newton-Cotes+formulas" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o"><span>Log in</span></a></li></ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu vector-menu-tabs" aria-labelledby="p-namespaces-label" role="navigation">
+	<h3 id="p-namespaces-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected mw-list-item"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas" title="View the content page [alt-shift-c]" accesskey="c"><span>Resource</span></a></li><li id="ca-talk" class="new mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Talk:Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [alt-shift-t]" accesskey="t"><span>Discuss</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-variants-label" role="navigation">
+	<input type="checkbox" id="p-variants-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-variants" class="vector-menu-checkbox" aria-labelledby="p-variants-label">
+	<h3 id="p-variants-label" aria-label="Change language variant" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Variants</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu vector-menu-tabs" aria-labelledby="p-views-label" role="navigation">
+	<h3 id="p-views-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="ca-view" class="selected mw-list-item collapsible"><a href="https://en.wikiversity.org/wiki/Error_of_Analysis_of_Newton-Cotes_formulas"><span>Read</span></a></li><li id="ca-ve-edit" class="mw-list-item collapsible"><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;veaction=edit" title="Edit this page [alt-shift-v]" accesskey="v">Edit</a></li><li id="ca-edit" class="collapsible mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=edit" title="Edit this page [alt-shift-e]" accesskey="e"><span>Edit source</span></a></li><li id="ca-history" class="mw-list-item collapsible"><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h"><span>View history</span></a></li></ul>
+		
+	</div>
+</nav>
+
+			<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown-noicon vector-menu vector-menu-dropdown" aria-labelledby="p-cactions-label" role="navigation" title="More options">
+	<input type="checkbox" id="p-cactions-checkbox" role="button" aria-haspopup="true" data-event-name="ui.dropdown-p-cactions" class="vector-menu-checkbox" aria-labelledby="p-cactions-label">
+	<h3 id="p-cactions-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">More</span>
+			<span class="vector-menu-checkbox-expanded">expanded</span>
+			<span class="vector-menu-checkbox-collapsed">collapsed</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+			<div id="p-search" role="search" class=" vector-search-box">
+	<div>
+			<h3>
+				<label for="searchInput">Search</label>
+			</h3>
+		<form action="https://en.wikiversity.org/w/index.php" id="searchform" class="vector-search-box-form">
+			<div id="simpleSearch" class="vector-search-box-inner" data-search-loc="header-navigation">
+				<input class="vector-search-box-input" type="search" name="search" placeholder="Search Wikiversity" aria-label="Search Wikiversity" autocapitalize="sentences" title="Search Wikiversity [alt-shift-f]" accesskey="f" id="searchInput">
+				<input type="hidden" name="title" value="Special:Search">
+				<input id="mw-searchButton" class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search">
+				<input id="searchButton" class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go">
+			</div>
+		</form>
+	</div>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="https://en.wikiversity.org/wiki/Wikiversity:Main_Page" title="Visit the main page"></a>
+	</div>
+	<nav id="p-Navigation" class="mw-portlet mw-portlet-Navigation vector-menu vector-menu-portal portal" aria-labelledby="p-Navigation-label" role="navigation">
+	<h3 id="p-Navigation-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-Main-Page" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Main_Page"><span>Main Page</span></a></li><li id="n-Browse" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Browse"><span>Browse</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-Guided-tours" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Help:Guides"><span>Guided tours</span></a></li><li id="n-Random" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:RandomRootpage"><span>Random</span></a></li><li id="n-help" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Help:Contents" title="The place to find out"><span>Help</span></a></li><li id="n-sitesupport" class="mw-list-item"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikiversity.org&amp;uselang=en" title="Support us"><span>Donate</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-Community" class="mw-portlet mw-portlet-Community vector-menu vector-menu-portal portal" aria-labelledby="p-Community-label" role="navigation">
+	<h3 id="p-Community-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Community</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-portal" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Community_Portal" title="About the project, what you can do, where to find things"><span>Portal</span></a></li><li id="n-Colloquium" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Colloquium"><span>Colloquium</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:News" title="Find background information on current events"><span>News</span></a></li><li id="n-Projects" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Community_projects"><span>Projects</span></a></li><li id="n-Sandbox" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Sandbox"><span>Sandbox</span></a></li><li id="n-Help-desk" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Help_desk"><span>Help desk</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation">
+	<h3 id="p-tb-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:WhatLinksHere/Error_of_Analysis_of_Newton-Cotes_formulas" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:RecentChangesLinked/Error_of_Analysis_of_Newton-Cotes_formulas" rel="nofollow" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k"><span>Related changes</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q"><span>Special pages</span></a></li><li id="t-permalink" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;oldid=2240715" title="Permanent link to this revision of the page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-cite" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Special:CiteThisPage&amp;page=Error_of_Analysis_of_Newton-Cotes_formulas&amp;id=2240715&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-Wikimedia_projects" class="mw-portlet mw-portlet-Wikimedia_projects vector-menu vector-menu-portal portal" aria-labelledby="p-Wikimedia_projects-label" role="navigation">
+	<h3 id="p-Wikimedia_projects-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Wikimedia projects</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="n-Commons" class="mw-list-item"><a href="https://commons.wikimedia.org/wiki/Main_Page"><span>Commons</span></a></li><li id="n-Wikibooks" class="mw-list-item"><a href="https://en.wikibooks.org/wiki/Project:Main_Page"><span>Wikibooks</span></a></li><li id="n-Wikidata" class="mw-list-item"><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page"><span>Wikidata</span></a></li><li id="n-Wikinews" class="mw-list-item"><a href="https://en.wikinews.org/wiki/Main_Page"><span>Wikinews</span></a></li><li id="n-Wikipedia" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Main_Page"><span>Wikipedia</span></a></li><li id="n-Wikiquote" class="mw-list-item"><a href="https://en.wikiquote.org/wiki/Main_Page"><span>Wikiquote</span></a></li><li id="n-Wikisource" class="mw-list-item"><a href="https://en.wikisource.org/wiki/Main_Page"><span>Wikisource</span></a></li><li id="n-Wikispecies" class="mw-list-item"><a href="https://species.wikimedia.org/wiki/Main_Page"><span>Wikispecies</span></a></li><li id="n-Wikivoyage" class="mw-list-item"><a href="https://en.wikivoyage.org/wiki/Main_Page"><span>Wikivoyage</span></a></li><li id="n-Wiktionary" class="mw-list-item"><a href="https://en.wiktionary.org/wiki/Project:Main_Page"><span>Wiktionary</span></a></li><li id="n-Meta-Wiki" class="mw-list-item"><a href="https://meta.wikimedia.org/wiki/Main_Page"><span>Meta-Wiki</span></a></li><li id="n-Outreach" class="mw-list-item"><a href="https://outreach.wikimedia.org/wiki/Main_Page"><span>Outreach</span></a></li><li id="n-MediaWiki" class="mw-list-item"><a href="https://www.mediawiki.org/wiki/MediaWiki"><span>MediaWiki</span></a></li><li id="n-Wikimania" class="mw-list-item"><a href="https://meta.wikimedia.org/wiki/Wikimania"><span>Wikimania</span></a></li></ul>
+		
+	</div>
+</nav>
+<nav id="p-coll-print_export" class="mw-portlet mw-portlet-coll-print_export vector-menu vector-menu-portal portal" aria-labelledby="p-coll-print_export-label" role="navigation">
+	<h3 id="p-coll-print_export-label" aria-label="" class="vector-menu-heading">
+		<span class="vector-menu-heading-label">Print/export</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"><li id="coll-create_a_book" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Error+of+Analysis+of+Newton-Cotes+formulas"><span>Create a book</span></a></li><li id="coll-download-as-rl" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Special:DownloadAsPdf&amp;page=Error_of_Analysis_of_Newton-Cotes_formulas&amp;action=show-download-screen"><span>Download as PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="https://en.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;printable=yes" title="Printable version of this page [alt-shift-p]" accesskey="p"><span>Printable version</span></a></li></ul>
+		
+	</div>
+</nav>
+
+	<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu vector-menu-portal portal" aria-labelledby="p-lang-label" role="navigation"><button class="uls-settings-trigger" title="Language settings"></button>
+	<h3 id="p-lang-label" aria-label="" class="vector-menu-heading">Languages</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list"></ul>
+		<div class="after-portlet after-portlet-lang"><span class="uls-after-portlet-link"></span><span class="wb-langlinks-add wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:NewItem?site=enwikiversity&amp;page=Error+of+Analysis+of+Newton-Cotes+formulas" title="Add interlanguage links" class="wbc-editpage">Add links</a></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+<footer id="footer" class="mw-footer" role="contentinfo">
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 22 November 2020, at 16:43.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike License</a>; additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy.</a></li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="https://en.wikiversity.org/wiki/Wikiversity:About" class="mw-redirect" title="Wikiversity:About">About Wikiversity</a></li>
+	<li id="footer-places-disclaimer"><a href="https://en.wikiversity.org/wiki/Wikiversity:General_disclaimer" title="Wikiversity:General disclaimer">Disclaimers</a></li>
+	<li id="footer-places-mobileview"><a href="https://en.m.wikiversity.org/w/index.php?title=Error_of_Analysis_of_Newton-Cotes_formulas&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+	<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikiversity.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Cookie_statement">Cookie statement</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation" loading="lazy"></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="./Error of Analysis of Newton-Cotes formulas - Wikiversity_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.196","walltime":"0.270","ppvisitednodes":{"value":2878,"limit":1000000},"postexpandincludesize":{"value":18270,"limit":2097152},"templateargumentsize":{"value":4592,"limit":2097152},"expansiondepth":{"value":18,"limit":40},"expensivefunctioncount":{"value":0,"limit":500},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":7463,"limit":5000000},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  116.224      1 -total"," 59.78%   69.477      1 Template:Reflist"," 36.51%   42.433      3 Template:Cite_book"," 34.72%   40.357      2 Template:NumBlk"," 33.03%   38.389      3 Template:Citation/core"," 14.18%   16.486      4 Template:Str_len"," 14.02%   16.292     12 Template:Str_len/core","  7.51%    8.732      3 Template:Citation/identifier","  3.29%    3.826      3 Template:Citation/make_link","  2.35%    2.731      2 Template:EquationRef"]},"scribunto":{"limitreport-timeusage":{"value":"0.005","limit":"10.000"},"limitreport-memusage":{"value":827146,"limit":52428800}},"cachereport":{"origin":"mw1440","timestamp":"20211204185335","ttl":1814400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":121,"wgHostname":"mw1387"});});</script>
+
+</body></html>

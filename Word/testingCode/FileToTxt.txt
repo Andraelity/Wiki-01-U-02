@@ -1,0 +1,45 @@
+import os
+
+def print2():
+    print()
+    print()
+
+def print3():
+    print()
+    print()
+    print()
+    
+print()
+print()
+print()
+
+print('Program design with the phylosophy to rename files from .file to txt')
+print('Primary conditions be able to convert files from .file to txt')
+print('All the in the directory would be converted to txt')
+print()
+print()
+
+print('NECESITO QUE EJECUTES BIEN 3 COMANDOS')
+print('Numero 1: give me the directory')
+entrada = input()
+
+os.chdir(entrada)
+os.system('dir')
+print(dir)
+
+print2()
+array_directories = os.listdir()
+
+print(array_directories)
+print(type(array_directories[0]))
+print3()
+for i in range(len(array_directories)):
+    string_name = array_directories[i].split('.')
+    
+    print(type(array_directories[i]))
+    string_fileName = array_directories[i]
+    string_CMD = 'ren ' + string_fileName + ' ' + string_name[0] + '.txt'
+    print(string_CMD)
+    os.system(string_CMD)
+    
+print3()

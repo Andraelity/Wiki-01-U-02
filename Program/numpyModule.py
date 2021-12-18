@@ -22,19 +22,6 @@ print('El componente que me maravilla como mentalidad las rutas que se pueden co
 
 composicion = True
 
-
-
-f = open('testing.txt','r+')
-list_Contenedor = list()
-for i in f:
-    list_Contenedor.append(i) 
-
-    
-for i in list_Contenedor:
-    print(i.strip())
-    
-
-
 # string_documento = 'Variable to string'
 
 # string_expression = 'Modelo narrativo'
@@ -72,7 +59,3 @@ for i in list_Contenedor:
 # Que clase de realidad nosotros sintetizamos ahora mismo, cual es el componente que queremos entender
 # El sistema que detalla como mi totalidad se aprende a si misma, como el componente narrativo se genera
 #
-
-#How to provide motion and complexity to the human mind, how to enable the complexity growing and defining properties around the concept 
-#Of psyche around the concepto of evolution
-

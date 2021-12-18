@@ -11,21 +11,11 @@ def print3():
     print()
     
     
-string_programName = (
-                                             
-' _____ _         _ _____ _               \n'
-'|  |  | |_ _____| |   __| |_ ___ ___ ___ \n'
-'|     |  _|     | |__   |  _| -_| . |_ -|\n'
-'|__|__|_| |_|_|_|_|_____|_| |___|  _|___|\n'
-'                                |_|      \n'
-
-)
-
-print(string_programName)
+    
 print2()
-print('THIS PROGRAM GIVE YOU ONE-1 TXT\'S:')
-print('WITH HTML LINES THAT YOU WILL USE IN THE PROGRAM ')
-print('GENERATOR OF WEBPAGE IN ORDER TO WRITE ALL THE PAGE')
+print('THIS PROGRAM GIVE YOU TWO TXT\'S:')
+print('ONE WITH THE HTML STRINGS THAT YOU CAN PASTE IN THE WIKI INDEX WEBPAGE ')
+print('THE SECOND WOULD CONTAIN HTML STRINGS THAT LINK YOU WITH THE FILE IN THE REPO ')
     
 print2()
 
@@ -63,14 +53,11 @@ list_imgDirectories = os.listdir()
 BASE_DIRECTORY = 'D:\INTERNET\Wiki-Andresito-02\Wiki-01-U-02\Word\CodigoToWiki'
 os.chdir(BASE_DIRECTORY)
 
-fun_create = open('za_imgDocument.txt', 'w+')
+fun_create = open('imgDocument.txt', 'w+')
 
 
 for i in range(len(list_imgDirectories)):
-    #
-    #<img src='img/logo.png' alt="logo"></a>
-    #
-    string_htmlParser  = '<img src=\'img/' + list_imgDirectories[i] + '\' alt="logo">' + '\n'
+    string_htmlParser  = '<a href="/"><img src=\'img/' + list_imgDirectories[i] + '\' alt="logo"></a>'
     fun_create.writelines(string_htmlParser)
 
 fun_create.close()
@@ -98,21 +85,19 @@ print2()
 print('#base repo example:  https://github.com/Andraelity/Wiki-01-U-02')
 print2()
 print('3. GET THE REPONAME WHERE THE WEBPAGE WILL BE STORED:')
+print2()
+
+
 #base repo example https://github.com/Andraelity/Wiki-01-U-02
 entrada = input()
 
+fun_create = open('fileNamesGitHub.txt', 'w+')
 
-fun_create = open('zb_fileNamesGitHub.txt', 'w+')
-
-#<h1><a href="https://github.com/Andraelity/Wiki-01-U-02.git">Matrix behavior</a></h1>
-
-count = 1 
 
 for i in range(len(list_codeDirectories)):
-    count += 1
-    string_htmlParser2  = entrada + '/tree/main/' + list_codeDirectories[i]
-    string_htmlNameFileParser = '<h'+ str(count) + ' id ="' + (list_codeDirectories[i].split('.'))[0]  +'"><a href="'+ string_htmlParser2.strip() + '">'+ string_htmlParser2.strip() + '</a></h'+ str(count) +'>' + '\n'
-    fun_create.writelines(string_htmlNameFileParser)
+    string_htmlParser  = entrada + '/tree/main/' + list_codeDirectories[i]
+    string_htmlNameFileParser = '<h1><a href="'+ string_htmlParser + '">'+ string_htmlParser + '</a></h1>'
+    fun_create.writelines(string_htmlParser)
 
 fun_create.close()
 
@@ -120,40 +105,7 @@ fun_create.close()
 #De componentes mas precisos.
 
 
-container_subtitles = open('zb_fileNamesGitHub.txt', 'r+')
-list_subtitles  = list()
-for i in container_subtitles:
-    list_subtitles.append(i)
-container_subtitles.close()
 
-container_img = open('za_imgDocument.txt', 'r+')
-list_img = list()
-for i in container_img:
-    list_img.append(i)
-container_img.close()
-
-
-list_textToTxtFinal = list()
-
-count = 0
-for i in range(len(list_subtitles)*2):
-    
-    if(i%2 == 0):
-        list_textToTxtFinal.append(list_subtitles[count])
-    else:
-        list_textToTxtFinal.append(list_img[count])
-        count += 1
-
-
-
-container_finalSubtitles = open('zzz_finalSubtitles.txt', 'w+')
-
-
-for i in list_textToTxtFinal:
-    
-    container_finalSubtitles.writelines(i)
-    
-container_finalSubtitles.close()
 
 print2()
 print('exit')

@@ -72,7 +72,7 @@ def main():
     print(string_nameProgram)
     
     print3()
-    print('This program convert all the files, "expected all to be .txt" in the directory to .png ')
+    print('This program can make a picture from to txt')
     print()
     print('YOU NEED TO FULLFIL JUST 1 REQUIREMENT, 1 STEP YOU NEED TO SOLVE')
     print2()
@@ -80,19 +80,16 @@ def main():
     entrada = input()
     os.chdir(entrada)
     array_files = os.listdir()
-    count = 0
-    
-    
     for i in array_files:
         image = text_image(i)
         
-        count += 1 
-        name_string = '00'+ str(count)
+        
+        name_string = '00'+ str(i)
         name_string += '.png'
         image.save(name_string)
         string_cmdDelFile = 'del ' + i
         os.system(string_cmdDelFile)
-    
+        
         
     print2()
     print2()

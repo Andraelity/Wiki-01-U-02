@@ -62,8 +62,6 @@ PROGRAM_NAME = (
 print(PROGRAM_NAME)
 
 
-os.system('del index.html')
-
 print2()
 print3()
 
@@ -182,11 +180,6 @@ string_html = (
 
 container_TxtHmtl.writelines(string_html)
 
-container_textStart = open('textStart.txt','w+')
-container_textStart.close()
-
-os.system('textStart.txt')
-
 container_textStart = open('textStart.txt','r+')
 
 for i in container_textStart:
@@ -194,7 +187,6 @@ for i in container_textStart:
     container_TxtHmtl.writelines(string_html)
 
 container_textStart.close()
-
 
 
 string_html = (
@@ -212,7 +204,7 @@ container_TxtHmtl.writelines(string_html)
 #<li><span>2</span><a href="#">Health</a></li>
 
 
-string_txtNames = 'zz_nameFiles.txt'
+string_txtNames = 'nameFiles.txt'
 
 contianer_names = open(string_txtNames, 'r+')
 list_names = list()
@@ -290,8 +282,6 @@ STRING_ENDPAGES = (
 container_TxtHmtl.writelines(STRING_ENDPAGES)
 
 container_TxtHmtl.close()
-
-os.system('ren ' + 'index_1.txt ' + 'index.html')
 
 #
 #Hay un punto donde usted puede estar practicando experimentos en sistemas de computo mas avanzados, relaciones conceptuales mas precisas

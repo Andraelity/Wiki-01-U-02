@@ -1,4 +1,4 @@
-import os
+
 string = ('sss sssss Ss   sS sss sssss sss sssss   sSSSs   d d s   sb d s.     sSSSs   d sss   \n'
 '    S       S S       S         S      S     S  S S  S S S S  ~O   S     S  S       \n'
 '    S        S        S         S     S       S S S   S  S S   `b S         S       \n'
@@ -19,7 +19,7 @@ print('Montarme en el componente que permite que todo suceda')
 print('El componente que me maravilla como mentalidad las rutas que se pueden comprender')
 
 
-""" 
+
 composicion = True
 
 
@@ -31,26 +31,7 @@ for i in f:
 
     
 for i in list_Contenedor:
-    print(i.strip()) """
-    
-    
-    
-documentoTesteo = open('testeoFile.txt','w+')
-documentoTesteo.close()
-
-os.system('testeoFile.txt')
-
-print('Probando')
-
-documentoTesteo = open('testeoFile.txt','r+')
-
-
-for i in documentoTesteo:
-    print(i)
-    
-
-documentoTesteo.close()
-print('exit')
+    print(i.strip())
     
 
 
@@ -95,7 +76,3 @@ print('exit')
 #How to provide motion and complexity to the human mind, how to enable the complexity growing and defining properties around the concept 
 #Of psyche around the concepto of evolution
 
-#haz un programa que detalle el comportamiento del saber, has un programa que me permita determinar las acciones del ahora
-#Que tipo de programa yo puedo establecer en este momento con tal de fomralizar los procesos que estoy pensando, las direcciones que estoy atendiendo.
-
-#Que contexto yo quiero aprender, como yo quiero aprender a probar

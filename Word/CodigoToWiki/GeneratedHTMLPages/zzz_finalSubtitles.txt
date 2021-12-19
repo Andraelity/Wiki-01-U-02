@@ -1,8 +1,8 @@
 <h2 id ="FileToTxt"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/FileToTxt.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/FileToTxt.py</a></h2>
 <img src='img/001.png' alt="logo">
-<h3 id ="numpyModule"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/numpyModule.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/numpyModule.py</a></h3>
+<h2 id ="numpyModule"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/numpyModule.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/numpyModule.py</a></h2>
 <img src='img/002.png' alt="logo">
-<h4 id ="parseHTMLLines"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/parseHTMLLines.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/parseHTMLLines.py</a></h4>
+<h2 id ="parseHTMLLines"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/parseHTMLLines.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/parseHTMLLines.py</a></h2>
 <img src='img/003.png' alt="logo">
-<h5 id ="TxtToImage"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/TxtToImage.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/TxtToImage.py</a></h5>
+<h2 id ="TxtToImage"><a href="https://github.com/Andraelity/Wiki-01-U-02/tree/main/TxtToImage.py">https://github.com/Andraelity/Wiki-01-U-02/tree/main/TxtToImage.py</a></h2>
 <img src='img/004.png' alt="logo">

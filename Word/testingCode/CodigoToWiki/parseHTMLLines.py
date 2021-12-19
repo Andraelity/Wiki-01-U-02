@@ -63,6 +63,13 @@ list_imgDirectories = os.listdir()
 
 os.chdir(BASE_DIRECTORY)
 
+container_nameFiles = open('nameFiles.txt', 'w+')
+
+for i in list_imgDirectories:
+    string_name = (i.split('.'))[0]
+    container_nameFiles.writelines(string_name)
+
+container_nameFiles.close()
 
 string_Name1 = 'za_imgDocument.txt'
 
@@ -97,17 +104,6 @@ list_codeDirectories = os.listdir()
 
 os.chdir(BASE_DIRECTORY)
 
-container_nameFiles = open('zz_nameFiles.txt', 'w+')
-
-for i in list_codeDirectories:
-    list_name = i.split('.')
-    string_name = list_name[0] + '\n'
-    container_nameFiles.writelines(string_name)
-
-container_nameFiles.close()
-
-
-
 print2()
 print('#base repo example:  https://github.com/Andraelity/Wiki-01-U-02')
 print2()
@@ -124,11 +120,11 @@ fun_create = open(string_Name2, 'w+')
 
 #<h1><a href="https://github.com/Andraelity/Wiki-01-U-02.git">Matrix behavior</a></h1>
 
-count = 2
+count = 1 
 
 for i in range(len(list_codeDirectories)):
-    
-    string_htmlParser2  = entrada + '/tree/main/program/' + list_codeDirectories[i]
+    count += 1
+    string_htmlParser2  = entrada + '/tree/main/' + list_codeDirectories[i]
     string_htmlNameFileParser = '<h'+ str(count) + ' id ="' + (list_codeDirectories[i].split('.'))[0]  +'"><a href="'+ string_htmlParser2.strip() + '">'+ string_htmlParser2.strip() + '</a></h'+ str(count) +'>' + '\n'
     fun_create.writelines(string_htmlNameFileParser)
 

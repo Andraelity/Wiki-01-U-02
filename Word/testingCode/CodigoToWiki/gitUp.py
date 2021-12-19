@@ -2,51 +2,40 @@ import os
 import sys
 
 
-PROGRAM_NAME = (
+
+for i in range(4):
+    print()
+    print()
+    print('INICIO')
+    print()
+    print()
     
-' _______  ___   _______  __   __  _______ \n'
-'|       ||   | |       ||  | |  ||       |\n'
-'|    ___||   | |_     _||  | |  ||    _  |\n'
-'|   | __ |   |   |   |  |  |_|  ||   |_| |\n'
-'|   ||  ||   |   |   |  |       ||    ___|\n'
-'|   |_| ||   |   |   |  |       ||   |    \n'
-'|_______||___|   |___|  |_______||___|    \n'
-'\n'
-)
-print(PROGRAM_NAME)
+    variable = os.getcwd()
 
+    print(variable)
+    
+    componenteCambio = 'exe cmd in python '
+    print(componenteCambio)
 
-print()
-print()
+    print('SON 3 COMANDOS CORRECTOS:')
+    os.system('dir')
+    print('1. change the directory:')
+    entrada = input()
+    os.chdir(entrada)
 
-print('This program generate a way to update the repo im working')
+    print('2 . Enter the link of the repo you want to save')
+    entrada = input()
 
+    os.system('git init')
+    os.system('git remote add origin ' + entrada)
 
+    os.system('git add .')
 
-print()
-print()
-print('INICIO')
-print()
-print()
+    os.system('git commit -m \'FirstCommit\'')
 
-variable = os.getcwd()
-print(variable)
+    os.system('git push -u origin main')
 
-componenteCambio = 'exe cmd in python '
-print(componenteCambio)
-print('SON 3 COMANDOS CORRECTOS:')
-os.system('dir')
-print('1. change the directory:')
-entrada = input()
-os.chdir(entrada)
-print('2 . Enter the link of the repo you want to save')
-entrada = input()
-os.system('git init')
-os.system('git remote add origin ' + entrada)
-os.system('git add .')
-os.system('git commit -m \'FirstCommit\'')
-os.system('git push -u origin main')
-#Que se puede hacer para analizar el elemento interno que motiva la descripcion de la mente
+    #Que se puede hacer para analizar el elemento interno que motiva la descripcion de la mente
 
     #De que otra manera por concepto, qeu tipo de abstraccion usted esta pensando, como se pueden concebir las interacciones
     #Que busca producir.
